@@ -20,7 +20,7 @@ export const ExternalProfiles = ({
     <Container>
       <TopHalf>
         <TopImageContainer>
-          <TopImage height={24} width={24} alt={`${title} logo`} src={icon} />
+          <TopImage height={40} width={40} alt={`${title} logo`} src={icon} />
         </TopImageContainer>
         <Title>{title}</Title>
       </TopHalf>
@@ -47,20 +47,20 @@ interface isVerifiedProps {
 const Container = styled.div`
   border: 1px solid #dbdbdb;
   padding: 0px 16px;
-  border-radius: 4px;
+  border-radius: 16px;
 `;
 
 const TopHalf = styled.div`
   border-bottom: 1px solid #dbdbdb;
   display: flex;
   align-items: center;
-  padding-bottom: 16px;
-  padding-top: 24px;
+  padding-bottom: 8px;
+  padding-top: 16px;
 `;
 
 const Title = styled.h3`
   color: #2b2b2b;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 16.94px;
   font-size: 14px;
   font-weight: 600;
@@ -72,7 +72,7 @@ const BottomHalf = styled.div<isVerifiedProps>`
   align-items: center;
   justify-content: ${(props) =>
     props.isVerified ? 'space-between' : 'flex-end'};
-  padding-top: 18px;
+  padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 8px;
   padding-right: 11px;

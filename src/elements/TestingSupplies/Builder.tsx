@@ -1,23 +1,20 @@
-import { NFTCard } from 'elements/cards/NFTCard';
-import Prof from './NFT.png';
+import { ExternalProfiles } from 'elements/externalProfiles/ExternalProfiles';
+import Icon from './emptyprofile.png';
 import styled from 'styled-components';
+
 
 export const Builder = () => {
   return (
     <div>
       <Container>
-        <NFTCard
-          nftLogo={Prof}
-          nftWebsite="https://gnc.com"
-          title="Azuki #8125"
-        />
+        <ExternalProfiles bottomText='@username' isVerified={true} icon={Icon} title="Phaver"  />
       </Container>
     </div>
   );
 };
 
 const Container = styled.div`
-  height: 308px;
-  width: 256px;
+  height: 120px;
+  width: 254px;
 `
 
