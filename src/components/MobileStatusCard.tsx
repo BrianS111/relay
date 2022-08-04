@@ -75,7 +75,6 @@ const Card = styled.div`
   padding: 24px;
   position: relative;
   box-shadow: 0px 4px 54px rgba(159, 159, 159, 0.25);
-  display: none;
 `;
 
 const Title = styled.h1`
