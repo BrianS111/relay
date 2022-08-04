@@ -59,7 +59,7 @@ const wagmi = createClient({
   },
 });
 
-export default function App() {
+export default function App({ Component, pageProps }: AppProps) {
   // checking for notifications at the Top Level
   useEffect(() => {
     const CheckForNotification = async () => {
