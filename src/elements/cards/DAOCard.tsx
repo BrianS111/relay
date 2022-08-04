@@ -14,9 +14,9 @@ export const DAOCard = ({ title, daoWebsite, daoLogo }: DAOCardProps) => {
     <Container>
       <FlexRowGroup>
         <LeftLogoContainer>
-          <Image
-            height={ContainerHeight}
-            width={ContainerHeight}
+          <LeftLogo
+            height={60}
+            width={60}
             src={daoLogo}
             alt={`${title} logo`}
           />
@@ -26,8 +26,8 @@ export const DAOCard = ({ title, daoWebsite, daoLogo }: DAOCardProps) => {
       <Link href={daoWebsite} passHref>
         <RightIconLink target="_blank">
           <RightIcon
-            height={18}
-            width={18}
+            height={12}
+            width={12}
             src={externalWindowBlue}
             alt={`Open external window to ${title}`}
           />
@@ -37,23 +37,23 @@ export const DAOCard = ({ title, daoWebsite, daoLogo }: DAOCardProps) => {
   );
 };
 
-const ContainerHeight = '48px';
+const ContainerHeight = '84px';
 // Keep this aligned with the width of the right icon and the sum of left and right margin of the icon
-const RightIconSpace = '48px';
+const RightIconSpace = '12px';
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #dbdbdb;
-  border-radius: 4px;
+  border-radius: 12px;
   height: ${ContainerHeight};
-  box-sizing: content-box;
+  padding: 12px 26px 12px 12px;
 `;
 
 const Title = styled.h3`
   color: #2b2b2b;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 19.6px;
   overflow: hidden;
@@ -66,17 +66,20 @@ const RightIcon = styled(Image)`
 `;
 
 const LeftLogoContainer = styled.div`
-  margin-right: 20px;
   display: flex;
   align-items: center;
   min-height: ${ContainerHeight};
   min-width: ${ContainerHeight};
+  border-radius: 12px;
+`;
+const LeftLogo = styled(Image)`
+  border-radius: 12px;
 `;
 
 const RightIconLink = styled.a`
-  margin: 0px 15px;
-  min-height: 18px;
-  min-width: 18px;
+  margin-left: 15px;
+  min-height: 12px;
+  min-width: 12px;
 `;
 
 const FlexRowGroup = styled.div`

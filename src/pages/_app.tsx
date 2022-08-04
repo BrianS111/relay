@@ -16,6 +16,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { useEffect } from 'react';
 import PlausibleProvider from 'next-plausible';
 import { isRelayProd, Plausible } from 'config';
+import {Builder} from '../elements/TestingSupplies/Builder'
 
 const alchemyKey = 'kmMb00nhQ0SWModX6lJLjXy_pVtiQnjx';
 
@@ -59,7 +60,7 @@ const wagmi = createClient({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App() {
   // checking for notifications at the Top Level
   useEffect(() => {
     const CheckForNotification = async () => {
@@ -99,7 +100,8 @@ export default function App({ Component, pageProps }: AppProps) {
             <RedirectProvider>
               <>
                 <GlobalStyles />
-                <Component {...pageProps} />
+                {/* <Component {...pageProps} /> */}
+                <Builder />
               </>
             </RedirectProvider>
           </XmtpContextProvider>
