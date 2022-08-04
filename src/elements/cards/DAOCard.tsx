@@ -21,6 +21,7 @@ export const DAOCard = ({ title, daoWebsite, daoLogo }: DAOCardProps) => {
             alt={`${title} logo`}
           />
         </LeftLogoContainer>
+        <TwentyPxSpace />
         <Title>{title}</Title>
       </FlexRowGroup>
       <Link href={daoWebsite} passHref>
@@ -37,7 +38,6 @@ export const DAOCard = ({ title, daoWebsite, daoLogo }: DAOCardProps) => {
   );
 };
 
-const ContainerHeight = '84px';
 // Keep this aligned with the width of the right icon and the sum of left and right margin of the icon
 const RightIconSpace = '12px';
 
@@ -47,7 +47,7 @@ const Container = styled.div`
   justify-content: space-between;
   border: 1px solid #dbdbdb;
   border-radius: 12px;
-  height: ${ContainerHeight};
+  height: 84px;
   padding: 12px 26px 12px 12px;
 `;
 
@@ -68,9 +68,9 @@ const RightIcon = styled(Image)`
 const LeftLogoContainer = styled.div`
   display: flex;
   align-items: center;
-  min-height: ${ContainerHeight};
-  min-width: ${ContainerHeight};
   border-radius: 12px;
+  min-height: 60px;
+  min-width: 60px;
 `;
 const LeftLogo = styled(Image)`
   border-radius: 12px;
@@ -87,3 +87,7 @@ const FlexRowGroup = styled.div`
   align-items: center;
   width: calc(100% - ${RightIconSpace});
 `;
+
+const TwentyPxSpace = styled.div`
+width: 20px;
+`
