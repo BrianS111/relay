@@ -1,12 +1,23 @@
-import styled from 'styled-components'
-import { DAOCard } from '../cards/DAOCard'
-import Prof from './emptyprofile.png'
+import { NFTCard } from 'elements/cards/NFTCard';
+import Prof from './NFT.png';
+import styled from 'styled-components';
 
 export const Builder = () => {
   return (
     <div>
-      <DAOCard daoLogo={Prof} daoWebsite='https://gnc.com' title={'Dao Name'} />
+      <Container>
+        <NFTCard
+          nftLogo={Prof}
+          nftWebsite="https://gnc.com"
+          title="Azuki #8125"
+        />
+      </Container>
     </div>
-  )
-}
+  );
+};
+
+const Container = styled.div`
+  height: 308px;
+  width: 256px;
+`
 
