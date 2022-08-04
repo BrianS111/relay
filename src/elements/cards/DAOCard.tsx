@@ -89,5 +89,5 @@ const FlexRowGroup = styled.div`
 `;
 
 const TwentyPxSpace = styled.div`
-width: 20px;
-`
+  width: 20px;
+`;
