@@ -21,7 +21,7 @@ export const NFTCard = ({
     <Container>
       <ImageContainer
         onClick={onClickImage}
-        style={{ cursor: onClickImage == null ? 'default' : 'pointer' }}>
+        style={{ cursor: onClickImage === undefined ? 'default' : 'pointer' }}>
         <TopLogo layout="fill" alt="yay" src={nftLogo} />
       </ImageContainer>
       <BottomLabel>

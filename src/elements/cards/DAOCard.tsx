@@ -21,7 +21,7 @@ export const DAOCard = ({
       <FlexRowGroup>
         <LeftLogoContainer
           onClick={onClickImage}
-          style={{ cursor: onClickImage == null ? 'default' : 'pointer' }}>
+          style={{ cursor: onClickImage === undefined ? 'default' : 'pointer' }}>
           <LeftLogo
             height={60}
             width={60}

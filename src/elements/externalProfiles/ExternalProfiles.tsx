@@ -23,7 +23,7 @@ export const ExternalProfiles = ({
   return (
     <Container
       onClick={onClickCard}
-      style={{ cursor: onClickCard == null ? 'default' : 'pointer' }}>
+      style={{ cursor: onClickCard === undefined ? 'default' : 'pointer' }}>
       <TopHalf>
         <TopImageContainer>
           <TopImage height={40} width={40} alt={`${title} logo`} src={icon} />
@@ -41,7 +41,7 @@ export const ExternalProfiles = ({
           />
         </RightBadgeContainer>
         <BottomButton
-          style={{ cursor: onClickButton == null ? 'default' : 'pointer' }}
+          style={{ cursor: onClickButton === undefined ? 'default' : 'pointer' }}
           onClick={onClickButton}
           isVerified={isVerified}>
           Verify Now
