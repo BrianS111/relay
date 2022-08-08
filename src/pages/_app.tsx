@@ -16,7 +16,6 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { useEffect } from 'react';
 import PlausibleProvider from 'next-plausible';
 import { isRelayProd, Plausible } from 'config';
-import Testing from 'elements/testing/Texting';
 
 const alchemyKey = 'kmMb00nhQ0SWModX6lJLjXy_pVtiQnjx';
 
@@ -100,8 +99,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <RedirectProvider>
               <>
                 <GlobalStyles />
-                {/* <Component {...pageProps} /> */}
-                <Testing />
+                <Component {...pageProps} />
               </>
             </RedirectProvider>
           </XmtpContextProvider>

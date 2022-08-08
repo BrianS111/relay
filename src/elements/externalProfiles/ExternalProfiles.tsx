@@ -41,7 +41,9 @@ export const ExternalProfiles = ({
           />
         </RightBadgeContainer>
         <BottomButton
-          style={{ cursor: onClickButton === undefined ? 'default' : 'pointer' }}
+          style={{
+            cursor: onClickButton === undefined ? 'default' : 'pointer',
+          }}
           onClick={onClickButton}
           isVerified={isVerified}>
           Verify Now
