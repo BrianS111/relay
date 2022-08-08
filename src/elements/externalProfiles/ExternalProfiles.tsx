@@ -8,6 +8,8 @@ interface ExternalProfilesProps {
   icon: StaticImageData;
   bottomText: string;
   isVerified: boolean;
+  onClickCard?: () => unknown;
+  onClickButton?: () => unknown;
 }
 
 export const ExternalProfiles = ({
@@ -15,9 +17,13 @@ export const ExternalProfiles = ({
   icon,
   bottomText,
   isVerified,
+  onClickCard,
+  onClickButton,
 }: ExternalProfilesProps) => {
   return (
-    <Container>
+    <Container
+      onClick={onClickCard}
+      style={{ cursor: onClickCard == null ? 'default' : 'pointer' }}>
       <TopHalf>
         <TopImageContainer>
           <TopImage height={40} width={40} alt={`${title} logo`} src={icon} />
@@ -34,7 +40,12 @@ export const ExternalProfiles = ({
             src={GreenBadge}
           />
         </RightBadgeContainer>
-        <BottomButton isVerified={isVerified}>Verify Now</BottomButton>
+        <BottomButton
+          style={{ cursor: onClickButton == null ? 'default' : 'pointer' }}
+          onClick={onClickButton}
+          isVerified={isVerified}>
+          Verify Now
+        </BottomButton>
       </BottomHalf>
     </Container>
   );
@@ -104,7 +115,6 @@ const BottomButton = styled.button<isVerifiedProps>`
   color: white;
   height: 33px;
   width: 92px;
-  cursor: pointer;
   border: none;
   border-radius: 4px;
   font-size: 12px;

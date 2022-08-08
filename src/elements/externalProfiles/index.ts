@@ -1,1 +1,1 @@
-export * from '../externalProfiles';
+export * from './ExternalProfiles';

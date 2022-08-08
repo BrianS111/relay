@@ -8,12 +8,20 @@ interface NFTCardProps {
   title: string;
   nftWebsite: string;
   nftLogo: StaticImageData;
+  onClickImage?: () => unknown;
 }
 
-export const NFTCard = ({ title, nftWebsite, nftLogo }: NFTCardProps) => {
+export const NFTCard = ({
+  title,
+  nftWebsite,
+  nftLogo,
+  onClickImage,
+}: NFTCardProps) => {
   return (
     <Container>
-      <ImageContainer>
+      <ImageContainer
+        onClick={onClickImage}
+        style={{ cursor: onClickImage == null ? 'default' : 'pointer' }}>
         <TopLogo layout="fill" alt="yay" src={nftLogo} />
       </ImageContainer>
       <BottomLabel>

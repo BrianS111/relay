@@ -7,13 +7,21 @@ interface DAOCardProps {
   title: string;
   daoWebsite: string;
   daoLogo: StaticImageData;
+  onClickImage?: () => unknown;
 }
 
-export const DAOCard = ({ title, daoWebsite, daoLogo }: DAOCardProps) => {
+export const DAOCard = ({
+  title,
+  daoWebsite,
+  daoLogo,
+  onClickImage,
+}: DAOCardProps) => {
   return (
     <Container>
       <FlexRowGroup>
-        <LeftLogoContainer>
+        <LeftLogoContainer
+          onClick={onClickImage}
+          style={{ cursor: onClickImage == null ? 'default' : 'pointer' }}>
           <LeftLogo
             height={60}
             width={60}
@@ -72,6 +80,7 @@ const LeftLogoContainer = styled.div`
   min-height: 60px;
   min-width: 60px;
 `;
+
 const LeftLogo = styled(Image)`
   border-radius: 12px;
 `;
