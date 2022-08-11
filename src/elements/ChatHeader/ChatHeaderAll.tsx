@@ -25,7 +25,7 @@ interface Props {
   onMenuClick?: () => unknown;
 }
 
-export const ChatHeader = ({
+export const ChatHeaderAll = ({
   LeftTitleText,
   badgeCount,
   isMenuIcon,
@@ -44,6 +44,7 @@ export const ChatHeader = ({
   const handleLeftToggle = () => {
     setLeftToggle(true);
   };
+
   const handleRightToggle = () => {
     setLeftToggle(false);
   };
@@ -128,7 +129,6 @@ interface StyleProps {
 
 interface ToggleProps {
   leftToggle: boolean;
-  isDarkMode: boolean;
 }
 
 const Container = styled.div<StyleProps>`
@@ -225,5 +225,11 @@ const ToggleItem = styled.li`
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const LeftToggleItem = styled(ToggleItem)<ToggleProps>``;
-const RightToggleItem = styled(ToggleItem)<ToggleProps>``;
+const LeftToggleItem = styled(ToggleItem)<ToggleProps>`
+  border: ${(props) => (props.leftToggle ? '2px solid #5A46C6' : 'none')};
+`;
+
+const RightToggleItem = styled(ToggleItem)<ToggleProps>`
+  border: ${(props) => (props.leftToggle ? 'none' : '2px solid #5A46C6')};
+  margin-left: 7px;
+`;

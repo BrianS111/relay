@@ -16,10 +16,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
 import { useEffect } from 'react';
 import PlausibleProvider from 'next-plausible';
 import { isRelayProd, Plausible } from 'config';
-import {ChatHeader} from '../elements/ChatHeader/ChatHeader';
 const alchemyKey = 'kmMb00nhQ0SWModX6lJLjXy_pVtiQnjx';
-import messageblack from '../elements/icons/messageblack.png';
-import relaybubble from '../elements/icons/relaybubble.png'
 
 const chains = defaultChains;
 const defaultChain = chain.mainnet;
@@ -100,8 +97,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <RedirectProvider>
               <>
                 <GlobalStyles />
-                {/* <Component {...pageProps} /> */}
-                <ChatHeader isDarkMode={true} LeftTitleText='Conversations' toggleIconLeft={relaybubble} toggleIconRight={relaybubble} isLeftIcon={true} badgeCount={"13"} isMenuIcon={true} isMinimizeIcon={true} subText={"Powered by Relay"}/>
+                <Component {...pageProps} />
               </>
             </RedirectProvider>
           </XmtpContextProvider>
