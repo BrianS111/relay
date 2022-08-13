@@ -1,13 +1,25 @@
 import styled from 'styled-components';
 import CardContainer from './CardContainer';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
+import Image from 'next/image';
+import downarrow from '../../images/downarrow.png';
+
 const black = '#25273d';
 const light = '#787a9b';
 
 export default function LandingCardsWithNavigation() {
-  const [itemOneActive, setItemOneActive] = useState(true);
-  const [itemTwoActive, setItemTwoActive] = useState(false);
-  const [itemThreeActive, setItemThreeActive] = useState(false);
+  const [itemOneActive, setItemOneActive] = useState(false);
+  const [itemTwoActive, setItemTwoActive] = useState(true);
+  const [itemThreeActive, setItemThreeActive] = useState(true);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(true);
+
+  //This is here to get rid of page glitch on first renders
+  useLayoutEffect(() => {
+    setItemOneActive(true);
+    setItemTwoActive(false);
+    setItemThreeActive(false);
+    setIsDropdownVisible(false);
+  }, []);
 
   const handleItemOneClick = () => {
     setItemTwoActive(false);
@@ -26,9 +38,61 @@ export default function LandingCardsWithNavigation() {
     setItemOneActive(false);
   };
 
+  const handleDropdownItemOneClick = () => {
+    setItemTwoActive(false);
+    setItemThreeActive(false);
+    setItemOneActive(true);
+  };
+  const handleDropdownItemTwoClick = () => {
+    setItemTwoActive(true);
+    setItemThreeActive(false);
+    setItemOneActive(false);
+  };
+
+  const handleDropdownItemThreeClick = () => {
+    setItemTwoActive(false);
+    setItemThreeActive(true);
+    setItemOneActive(false);
+  };
+
+  const handleDropdownClick = () => {
+    setIsDropdownVisible((isDropdownVisible) => !isDropdownVisible);
+  };
+
   return (
     <Container>
       <Navbar>
+        <NavDropdown onClick={handleDropdownClick}>
+          <DropDownTitle>
+            {itemOneActive && 'Multiply on Oasis'}
+            {itemTwoActive && 'Borrow on Oasis'}
+            {itemThreeActive && 'Earn on Oasis'}
+            <FlexRow>
+              <Line />
+              <DownArrowContainer>
+                <Image
+                  height={20}
+                  width={20}
+                  alt="Click to open dropdown menu"
+                  src={downarrow}
+                />
+              </DownArrowContainer>
+            </FlexRow>
+          </DropDownTitle>
+          {isDropdownVisible && (
+            <DropDownItems>
+              <DropdownItem onClick={handleDropdownItemOneClick}>
+                Multiply on Oasis
+              </DropdownItem>
+              <DropdownItem onClick={handleDropdownItemTwoClick}>
+                Borrow on Oasis
+              </DropdownItem>
+              <DropdownItem onClick={handleDropdownItemThreeClick}>
+                Earn on Oasis
+              </DropdownItem>
+            </DropDownItems>
+          )}
+        </NavDropdown>
         <NavItems>
           <NavItemOne
             itemOneActive={itemOneActive}
@@ -51,7 +115,7 @@ export default function LandingCardsWithNavigation() {
         Multiply your exposure to your favorite crypto assets. Browse our
         featured products here. See all Multiply collateral types
       </Paragraph>
-      <CardContainer />
+      <CardContainer itemOneActive={itemOneActive} itemTwoActive={itemTwoActive} itemThreeActive={itemThreeActive} />
     </Container>
   );
 }
@@ -72,7 +136,12 @@ const Container = styled.section`
   border-radius: 99rem;
 `;
 
-const Navbar = styled.nav``;
+const Navbar = styled.nav`
+  @media (max-width: 925px) {
+    width: 100%;
+    padding: 0px 15px;
+  }
+`;
 
 const NavItems = styled.ul`
   display: flex;
@@ -81,10 +150,13 @@ const NavItems = styled.ul`
   list-style: none;
   border-radius: 99rem;
   box-sizing: content-box;
+
+  @media (max-width: 925px) {
+    display: none;
+  }
 `;
 
 const NavItem = styled.li`
-  color: ${light};
   font-size: 16px;
   padding: 20px 30px;
   border-radius: 99rem;
@@ -107,17 +179,78 @@ const Paragraph = styled.p`
 `;
 
 const NavItemOne = styled(NavItem)<StyleProps>`
+  color: ${(props) => (props.itemOneActive ? `${black}` : `${light}`)};
   background-color: ${(props) => (props.itemOneActive ? 'white' : '#f1f3f4')};
   box-shadow: ${(props) =>
     props.itemOneActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 const NavItemTwo = styled(NavItem)<StyleProps>`
+  color: ${(props) => (props.itemTwoActive ? `${black}` : `${light}`)};
   background-color: ${(props) => (props.itemTwoActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemTwoActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 const NavItemThree = styled(NavItem)<StyleProps>`
+  color: ${(props) => (props.itemThreeActive ? `${black}` : `${light}`)};
   background-color: ${(props) => (props.itemThreeActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemThreeActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
+`;
+
+const NavDropdown = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+
+  @media (min-width: 926px) {
+    display: none;
+  }
+`;
+
+const DropdownItem = styled.div`
+  font-weight: 400;
+  padding: 15px 15px;
+  cursor: pointer;
+
+  :hover {
+    background-color: #f3f7fa;
+  }
+`;
+
+const DropDownTitle = styled.div`
+  background-color: white;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+`;
+
+const DownArrowContainer = styled.div`
+  position: relative;
+`;
+
+const Line = styled.div`
+  width: 1px;
+  height: 20px;
+  background-color: rgb(204, 204, 204);
+`;
+
+const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;
+const DropDownItems = styled.div`
+  border-radius: 4px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+  border: 1px solid rgb(204, 204, 204);
 `;

@@ -69,7 +69,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 `;
 
 const InnerIconContainer = styled.div`
@@ -132,6 +132,7 @@ const H1 = styled.h1`
   font-weight: 500;
   line-height: 52px;
   margin-bottom: 16px;
+  text-align: center;
 `;
 
 const HeroSubText = styled.p`
@@ -177,8 +178,10 @@ const CallToActionButton = styled.button`
 const HeroUl = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 15px;
   margin-bottom: 75px;
+  flex-wrap: wrap;
 `;
 
 const HeroLi = styled.li`
@@ -192,6 +195,7 @@ const HeroLi = styled.li`
   border: 1px solid #EAEAEA;
   padding: 10px 32px;
   transition: background-color 200ms;
+  cursor: pointer;
 
   :hover {
     background-color: white;
@@ -202,9 +206,15 @@ const ThreeDivContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1010px;
+  padding: 0px 20px;
   width: 100%;
   margin-bottom: 125px;
+  flex-wrap: wrap;
+  @media (max-width: 625px) {
+    justify-content: center;
+    gap: 30px;
+  }
 `;
 
 const CtaButtonText = styled.span`

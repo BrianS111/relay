@@ -65,6 +65,9 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 860px) {
+    display: none;
+  }
 `;
 
 const NavUl = styled.ul`
@@ -101,7 +104,6 @@ const ConnectArrowContainer = styled.div`
   transition: transform 200ms ease;
 `;
 
-
 const LeftButton = styled.button`
   padding: 8px 32px;
   border-radius: 99rem;
@@ -126,13 +128,17 @@ const LeftButton = styled.button`
 `;
 
 const LanguageDropdown = styled.div`
-cursor: pointer;
-color: #78789b;
+  cursor: pointer;
+  color: #78789b;
 `;
-
 
 const LeftGroup = styled.div`
   display: flex;
   align-items: center;
 `;
-const RightGroup = styled.div``;
+
+const RightGroup = styled.div`
+  @media (max-width: 860px) {
+    display: none;
+  }
+`;

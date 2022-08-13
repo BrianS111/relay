@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import QuestionCard from './QuestionCard';
+const black = '#25273d';
 
 export default function QuestionSection() {
   const ListItems = [
@@ -41,6 +42,7 @@ export default function QuestionSection() {
   return (
     <Container>
       <Header>Have Some questions?</Header>
+      <CardContainer>
       {ListItems.map((e, index) => {
         return (
           <QuestionCard
@@ -51,10 +53,32 @@ export default function QuestionSection() {
           />
         );
       })}
+      </CardContainer>
     </Container>
   );
 }
 
-const Container = styled.section``;
+const Container = styled.section`
+padding-top: 225px;
+padding-bottom: 275px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+max-width: 1200px;
+`;
 
-const Header = styled.h2``;
+const CardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+`
+
+const Header = styled.h2`
+margin-bottom: 25px;
+font-size: 32px;
+color: ${black};
+font-weight: 500;
+`;

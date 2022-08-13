@@ -10,6 +10,7 @@ interface Props {
   MiddleParagraphText: string;
   ButtonText: string;
   CardListItems: any;
+  MiddleContainerColor: string;
 }
 
 export default function Card({
@@ -19,6 +20,7 @@ export default function Card({
   MiddleParagraphText,
   ButtonText,
   CardListItems,
+  MiddleContainerColor,
 }: Props) {
   return (
     <Container>
@@ -31,7 +33,7 @@ export default function Card({
           <ImagePlaceholder />
         </HeaderImage>
       </Header>
-      <MiddleContainer>
+      <MiddleContainer MiddleContainerColor={MiddleContainerColor}>
         <MiddleTitle>{MiddleTitleText}</MiddleTitle>
         <MiddleParagraph>{MiddleParagraphText}</MiddleParagraph>
       </MiddleContainer>
@@ -57,8 +59,14 @@ const ImagePlaceholder = styled.div`
 const Container = styled.div`
   padding: 32px;
   border-radius: 20px;
-  margin-right: 25px;
-  max-width: 379px;
+  margin: 25px;
+  width: 379px;
+  min-width: 379px;
+  max-height: 600px;
+
+  @media (max-width: 925px) {
+    width: 100%;
+  }
 
   :hover {
     ${ImagePlaceholder} {
@@ -88,6 +96,11 @@ const Container = styled.div`
     );
   }
 `;
+
+interface StyleProps {
+  MiddleContainerColor: string;
+}
+
 const Header = styled.div`
   display: flex;
   align-items: center;
@@ -119,19 +132,18 @@ const HeaderImage = styled.div`
   border-radius: 50%;
 `;
 
-const MiddleContainer = styled.div`
+const MiddleContainer = styled.div<StyleProps>`
   padding: 16px;
   border-radius: 20px;
   min-height: 116px;
-  mix-blend-mode: overlay;
-  background-color: black;
-  opacity: 0.7;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 9px;
   margin: 35px 0px;
+  position: relative;
+  background-color: ${(props) => props.MiddleContainerColor};
 `;
 const MiddleTitle = styled.h3`
   color: ${light};

@@ -5,7 +5,7 @@ import LandingCardsWithNavigation from 'components/LandingCardsWithNav/LandingCa
 import QuestionSection from 'components/QuestionSection/QuestionSection';
 import GetStartedSection from 'components/GetStartedSection/GetStartedSection';
 import Subscribe from 'components/Subscribe/Subscribe';
-import Footer from 'components/Footer/Footer';
+import Footer from '../components/Footer/Footer'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <QuestionSection />
       <GetStartedSection />
       <Subscribe />
-      {/* <Footer /> */}
+      <Footer />
     </FullContainer>
   );
 }
