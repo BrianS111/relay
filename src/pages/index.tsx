@@ -5,27 +5,19 @@ import LandingCardsWithNavigation from 'components/LandingCardsWithNav/LandingCa
 import QuestionSection from 'components/QuestionSection/QuestionSection';
 import GetStartedSection from 'components/GetStartedSection/GetStartedSection';
 import Subscribe from 'components/Subscribe/Subscribe';
-import Footer from '../components/Footer/Footer'
+import Footer from '../components/Footer/Footer';
+
+const black = '#25273d';
 
 export default function Home() {
   return (
-    <FullContainer>
-      <Header />
+    <>
       <HeroSection />
       <LandingCardsWithNavigation />
       <QuestionSection />
       <GetStartedSection />
       <Subscribe />
       <Footer />
-    </FullContainer>
+    </>
   );
 }
-
-const FullContainer = styled.div`
-  height: 100vh;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`;

@@ -56,6 +56,7 @@ font-size: 32px;
 margin-bottom: 45px;
 font-weight: 400;
 color: ${black};
+text-align: center
 `;
 
 const CardContainer = styled.div`

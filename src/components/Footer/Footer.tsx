@@ -70,7 +70,7 @@ const IconContainer = styled.div`
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   max-width: 1200px;
   height: 300px;
@@ -78,14 +78,25 @@ const Container = styled.div`
 
   @media (max-width: 860px) {
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
   }
 `;
 
-const H3 = styled.h3``;
+const H3 = styled.h3`
+@media (max-width: 400px) {
+  text-align: center;
+}
+`;
 
 const Span = styled.span`
   color: ${light};
   font-weight: 300;
+
+  @media (max-width: 400px) {
+    text-align: center;
+  }
 `;
 
 const InputContainer = styled.div`
@@ -100,6 +111,10 @@ const InputContainer = styled.div`
     ${IconContainer} {
       transform: translateX(5px);
     }
+  }
+
+  @media (max-width: 390px) {
+    width: 100%;
   }
 `;
 
@@ -137,6 +152,7 @@ const Li = styled.li`
   color: ${black};
   margin-bottom: 30px;
   cursor: pointer;
+  text-align: center;
 `;
 
 const ListContainer = styled.div`
@@ -165,4 +181,5 @@ const List = styled.div`
 `;
 const ListTitle = styled.h3`
   color: ${black};
+  text-align: center;
 `;

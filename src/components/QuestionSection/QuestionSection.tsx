@@ -59,8 +59,10 @@ export default function QuestionSection() {
 }
 
 const Container = styled.section`
-padding-top: 225px;
-padding-bottom: 275px;
+margin-top: 225px;
+margin-bottom: 275px;
+padding-left: 20px;
+padding-right: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -71,6 +73,7 @@ max-width: 1200px;
 const CardContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 30px;
   width: 100%;
   flex-wrap: wrap;
@@ -81,4 +84,5 @@ margin-bottom: 25px;
 font-size: 32px;
 color: ${black};
 font-weight: 500;
+text-align: center;
 `;

@@ -30,6 +30,7 @@ export default function QuestionCard({
 }
 const Container = styled.div`
   border-radius: 16px;
+  width: 100%;
   :first-of-type {
     background-image: url(${cubes.src}),
       linear-gradient(
@@ -64,6 +65,10 @@ const Container = styled.div`
   }
   width: 411px;
   height: 340px;
+
+  @media (max-width: 897px) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.h3`

@@ -3,11 +3,16 @@ import styled from 'styled-components';
 import blackArrowRight from '../../images/blackArrowRight.png';
 import whiteArrowRight from '../../images/whiteArrowWhite.png';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 const black = '#25273d';
 const light = '#787a9b';
 
+
 export default function HeroSection() {
+  useEffect(() => {
+    console.log("effect")
+  },[])
   return (
     <Container>
       <TopHeroButton>
@@ -64,7 +69,6 @@ export default function HeroSection() {
 }
 
 const Container = styled.section`
-  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -133,18 +137,20 @@ const H1 = styled.h1`
   line-height: 52px;
   margin-bottom: 16px;
   text-align: center;
+  padding: 20px;
 `;
 
 const HeroSubText = styled.p`
   color: #787a9b;
   line-height: 28px;
   margin-bottom: 32px;
-  max-width: 740px;
+  max-width: 780px;
   text-align: center;
   line-height: 28px;
   opacity: 0.8;
   font-weight: 400;
   font-size: 18px;
+  padding: 0px 20px;
 `;
 
 const ImageContainer = styled.div`
@@ -213,7 +219,8 @@ const ThreeDivContainer = styled.div`
   flex-wrap: wrap;
   @media (max-width: 625px) {
     justify-content: center;
-    gap: 30px;
+    flex-direction: column;
+    gap: 40px;
   }
 `;
 

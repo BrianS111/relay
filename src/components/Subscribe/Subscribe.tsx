@@ -40,6 +40,7 @@ const H2 = styled.h2`
   margin-bottom: 25px;
   font-size: 32px;
   font-weight: 400;
+  text-align: center;
 `;
 
 const InputContainer = styled.div`

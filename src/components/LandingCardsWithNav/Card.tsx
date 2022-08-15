@@ -59,13 +59,16 @@ const ImagePlaceholder = styled.div`
 const Container = styled.div`
   padding: 32px;
   border-radius: 20px;
-  margin: 25px;
+  margin: 15px;
   width: 379px;
   min-width: 379px;
   max-height: 600px;
 
   @media (max-width: 925px) {
     width: 100%;
+  }
+  @media (max-width: 400px) {
+    min-width: 350px
   }
 
   :hover {

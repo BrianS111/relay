@@ -112,10 +112,18 @@ export default function LandingCardsWithNavigation() {
         </NavItems>
       </Navbar>
       <Paragraph>
-        Multiply your exposure to your favorite crypto assets. Browse our
-        featured products here. See all Multiply collateral types
+        {itemOneActive &&
+          'Multiply your exposure to your favorite crypto assets. Browse our featured products here.'}
+        {itemTwoActive &&
+          'Borrow Dai against your favorite crypto assets. Use the Dai however you like.'}
+        {itemThreeActive &&
+          'Put your crypto assets to work today. Start generating the best yields. Select your Earn product below.'}
       </Paragraph>
-      <CardContainer itemOneActive={itemOneActive} itemTwoActive={itemTwoActive} itemThreeActive={itemThreeActive} />
+      <CardContainer
+        itemOneActive={itemOneActive}
+        itemTwoActive={itemTwoActive}
+        itemThreeActive={itemThreeActive}
+      />
     </Container>
   );
 }
