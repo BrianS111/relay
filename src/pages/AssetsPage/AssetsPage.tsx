@@ -8,7 +8,7 @@ export default function index() {
       <H1>Oasis Assets</H1>
       <P>
         Oasis Asssets are used by network participants to execute their
-        requested operations on it. We can think about it as the "fuel" of the
+        requested operations on it. We can think about it as the fuel of the
         network.
       </P>
       <CardContainer>
