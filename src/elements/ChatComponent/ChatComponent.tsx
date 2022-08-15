@@ -1,11 +1,11 @@
 import { ReactChildren } from 'react';
 import styled from 'styled-components';
 
-interface Props {
+interface ChatComponentProps {
   children: ReactChildren;
 }
 
-export const ChatComponent = (props: Props) => {
+export const ChatComponent = (props: ChatComponentProps) => {
   return <Container>{props.children}</Container>;
 };
 

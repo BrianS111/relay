@@ -1,9 +1,22 @@
 import styled from 'styled-components';
+import { useRef } from 'react';
 
-export const TextArea = () => {
+export interface TextInputProps {
+  onChange?: () => unknown;
+  onSubmit?: () => unknown;
+}
+
+export const TextArea = ({ onChange, onSubmit }: TextInputProps) => {
+  const TextInputRef = useRef(null);
+
   return (
     <Container>
-      <Input placeholder="Write message here..." />
+      <Input
+        ref={TextInputRef}
+        onChange={onChange}
+        onSubmit={onSubmit}
+        placeholder="Write message here..."
+      />
     </Container>
   );
 };
@@ -19,12 +32,14 @@ const Input = styled.textarea`
   outline: none;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
   resize: none;
+  font-family: 'inter';
 
   ::placeholder {
     font-size: 14px;
     font-weight: 450;
     line-height: 17.71px;
     color: ${(props) => props.theme.colors.textSecondary};
+    font-family: 'inter';
   }
 `;
 

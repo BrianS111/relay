@@ -1,6 +1,6 @@
 import { ChatHeaderAll } from './ChatHeaderAll';
 
-interface Props {
+export interface ChatHeaderDarkExitOnlyProps {
   badgeCount: string;
   leftTitleText: string;
   onExitClick: () => unknown;
@@ -9,7 +9,7 @@ interface Props {
 export const ChatHeaderDarkExitOnly = ({
   leftTitleText,
   onExitClick,
-}: Props) => {
+}: ChatHeaderDarkExitOnlyProps) => {
   return (
     <ChatHeaderAll
       isLeftIcon={false}

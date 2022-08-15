@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-interface Props {
+export interface SwitchPrimaryProps {
   textContent: string;
   isPrimary: boolean;
   onClick?: () => unknown;
 }
 
-export const switchPrimary = ({ textContent, isPrimary, onClick }: Props) => {
+export const switchPrimary = ({
+  textContent,
+  isPrimary,
+  onClick,
+}: SwitchPrimaryProps) => {
   return (
     <Button
       style={{ cursor: onClick === undefined ? 'default' : 'pointer' }}
@@ -17,11 +21,11 @@ export const switchPrimary = ({ textContent, isPrimary, onClick }: Props) => {
   );
 };
 
-interface StyleProps {
+export interface SwitchPrimaryStyleProps {
   isPrimary: boolean;
 }
 
-const Button = styled.button<StyleProps>`
+const Button = styled.button<SwitchPrimaryStyleProps>`
   font-size: 12px;
   line-height: 18px;
   padding: 8px 12px;

@@ -1,6 +1,6 @@
 import { ChatHeaderAll } from './ChatHeaderAll';
 
-interface Props {
+export interface ChatHeaderLightNewMessageToggleProps {
   subText: string;
   leftTitleText: string;
   toggleIconLeft: StaticImageData;
@@ -16,7 +16,7 @@ export const ChatHeaderLightNewMessageToggle = ({
   onMinimizeClick,
   toggleIconLeft,
   toggleIconRight,
-}: Props) => {
+}: ChatHeaderLightNewMessageToggleProps) => {
   return (
     <ChatHeaderAll
       onMinimizeClick={onMinimizeClick}

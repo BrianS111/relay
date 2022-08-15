@@ -1,6 +1,6 @@
 import { ChatHeaderAll } from './ChatHeaderAll';
 
-interface Props {
+export interface ChatHeaderDarkMenuIconProps {
   leftTitleText: string;
   subText: string;
   onExitClick: () => unknown;
@@ -13,7 +13,7 @@ export const ChatHeaderDarkMenuIcon = ({
   onExitClick,
   onMinimizeClick,
   subText,
-}: Props) => {
+}: ChatHeaderDarkMenuIconProps) => {
   return (
     <ChatHeaderAll
       isLeftIcon={true}

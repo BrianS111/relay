@@ -10,7 +10,7 @@ import backarrowwhite from '../icons/backarrowwhite.png';
 import backarrowblack from '../icons/backarrowblack.png';
 import { useState } from 'react';
 
-interface Props {
+export interface ChatHeaderAllProps {
   LeftTitleText: string;
   badgeCount?: string;
   isDarkMode: boolean;
@@ -38,7 +38,7 @@ export const ChatHeaderAll = ({
   onMinimizeClick,
   onMenuClick,
   isDarkMode,
-}: Props) => {
+}: ChatHeaderAllProps) => {
   const [leftToggle, setLeftToggle] = useState(false);
 
   const handleLeftToggle = () => {
@@ -123,15 +123,12 @@ export const ChatHeaderAll = ({
   );
 };
 
-interface StyleProps {
-  isDarkMode: boolean;
+interface ChatHeaderAllStyleProps {
+  isDarkMode?: boolean;
+  leftToggle?: boolean;
 }
 
-interface ToggleProps {
-  leftToggle: boolean;
-}
-
-const Container = styled.div<StyleProps>`
+const Container = styled.div<ChatHeaderAllStyleProps>`
   height: 80px;
   display: flex;
   align-items: center;
@@ -145,7 +142,7 @@ const Container = styled.div<StyleProps>`
   padding: 31px 25px 31px 20px;
 `;
 
-const H2 = styled.h2<StyleProps>`
+const H2 = styled.h2<ChatHeaderAllStyleProps>`
   font-size: 14px;
   font-weight: 500;
   line-height: 17.71px;
@@ -153,7 +150,7 @@ const H2 = styled.h2<StyleProps>`
   color: ${(props) =>
     props.isDarkMode ? '#F7F7F7' : (props) => props.theme.colors.textPrimary};
 `;
-const Badge = styled.div<StyleProps>`
+const Badge = styled.div<ChatHeaderAllStyleProps>`
   border-radius: 99rem;
   padding: 4px 6px;
   background-color: white;
@@ -186,7 +183,7 @@ const Icon = styled.div`
   width: 20px;
 `;
 
-const Subtext = styled.span<StyleProps>`
+const Subtext = styled.span<ChatHeaderAllStyleProps>`
   color: #515151;
   color: #f7f7f7;
   font-size: 10px;
@@ -225,11 +222,11 @@ const ToggleItem = styled.li`
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const LeftToggleItem = styled(ToggleItem)<ToggleProps>`
+const LeftToggleItem = styled(ToggleItem)<ChatHeaderAllStyleProps>`
   border: ${(props) => (props.leftToggle ? '2px solid #5A46C6' : 'none')};
 `;
 
-const RightToggleItem = styled(ToggleItem)<ToggleProps>`
+const RightToggleItem = styled(ToggleItem)<ChatHeaderAllStyleProps>`
   border: ${(props) => (props.leftToggle ? 'none' : '2px solid #5A46C6')};
   margin-left: 7px;
 `;

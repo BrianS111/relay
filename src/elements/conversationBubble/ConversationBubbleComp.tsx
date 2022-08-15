@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-interface Props {
-  fromMe: boolean;
-  timestamp: string;
-  messagecontent: string;
+export interface ConversationBubbleCompProps {
+  fromMe?: boolean;
+  timestamp?: string;
+  messagecontent?: string;
 }
 
 export const ConversationBubble = ({
   fromMe,
   messagecontent,
   timestamp,
-}: Props) => {
+}: ConversationBubbleCompProps) => {
   return (
     <Container fromMe={fromMe}>
       <Message fromMe={fromMe}>{messagecontent}</Message>
@@ -18,11 +18,11 @@ export const ConversationBubble = ({
     </Container>
   );
 };
-interface FromProps {
-  fromMe: boolean;
+export interface ConversationBubbleCompProps {
+  fromMe?: boolean;
 }
 
-const Container = styled.div<FromProps>`
+const Container = styled.div<ConversationBubbleCompProps>`
   background-color: ${(props) => (props.fromMe ? '#5A46C6' : '#F8F7FF')};
   border-radius: ${(props) =>
     props.fromMe ? '16px 16px 4px 16px' : '16px 16px 16px 4px;'};
@@ -33,7 +33,7 @@ const Container = styled.div<FromProps>`
   flex-direction: column;
 `;
 
-const Message = styled.p<FromProps>`
+const Message = styled.p<ConversationBubbleCompProps>`
   color: ${(props) => (props.fromMe ? 'white' : '##060028')};
   font-size: 14px;
   font-weight: 450;
@@ -41,7 +41,7 @@ const Message = styled.p<FromProps>`
   line-height: 17.71px;
 `;
 
-const Timestamp = styled.span<FromProps>`
+const Timestamp = styled.span<ConversationBubbleCompProps>`
   color: ${(props) => (props.fromMe ? '#CFC6FF' : '#4E4773')};
   margin-top: 8px;
   font-weight: 450;

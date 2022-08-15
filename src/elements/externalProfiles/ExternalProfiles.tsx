@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import GreenBadge from '../../../public/assets/images/greenbadge.png';
 
-interface ExternalProfilesProps {
+export interface ExternalProfilesProps {
   title: string;
   icon: StaticImageData;
   bottomText: string;
@@ -53,7 +53,7 @@ export const ExternalProfiles = ({
   );
 };
 
-interface isVerifiedProps {
+export interface ExternalProfilesStyleProps {
   isVerified: boolean;
 }
 
@@ -80,7 +80,7 @@ const Title = styled.h3`
   line-height: 16.94px;
 `;
 
-const BottomHalf = styled.div<isVerifiedProps>`
+const BottomHalf = styled.div<ExternalProfilesStyleProps>`
   display: flex;
   align-items: center;
   justify-content: ${(props) =>
@@ -91,11 +91,11 @@ const BottomHalf = styled.div<isVerifiedProps>`
   padding-right: 11px;
 `;
 
-const RightBadgeContainer = styled.div<isVerifiedProps>`
+const RightBadgeContainer = styled.div<ExternalProfilesStyleProps>`
   display: ${(props) => (props.isVerified ? 'block' : 'none')};
 `;
 
-const BottomText = styled.span<isVerifiedProps>`
+const BottomText = styled.span<ExternalProfilesStyleProps>`
   color: #5b5b5b;
   font-weight: 500;
   font-size: 12px;
@@ -112,7 +112,7 @@ const TopImage = styled(Image)`
   border-radius: 50%;
 `;
 
-const BottomButton = styled.button<isVerifiedProps>`
+const BottomButton = styled.button<ExternalProfilesStyleProps>`
   background-color: #5a46c6;
   color: white;
   height: 33px;

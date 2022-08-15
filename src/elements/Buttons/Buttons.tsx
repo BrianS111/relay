@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-interface Props {
+export interface ButtonsProps {
   isPrimary: boolean;
   onClick?: () => unknown;
   icon?: StaticImageData;
   textContent: string;
 }
 
-export const Buttons = ({ isPrimary, onClick, textContent, icon }: Props) => {
+export const Buttons = ({ isPrimary, onClick, textContent, icon }: ButtonsProps) => {
   return (
     <Button
       style={{ cursor: onClick === undefined ? 'default' : 'pointer' }}
@@ -24,11 +24,11 @@ export const Buttons = ({ isPrimary, onClick, textContent, icon }: Props) => {
   );
 };
 
-interface StyleProps {
+export interface ButtonsStyleProps {
   isPrimary: boolean;
 }
 
-const Button = styled.button<StyleProps>`
+const Button = styled.button<ButtonsStyleProps>`
   display: flex;
   align-items: center;
   color: ${(props) =>

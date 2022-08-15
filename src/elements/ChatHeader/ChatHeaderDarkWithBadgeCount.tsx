@@ -1,6 +1,6 @@
 import { ChatHeaderAll } from './ChatHeaderAll';
 
-interface Props {
+export interface ChatHeaderDarkWithBadgeCountProps {
   badgeCount: string;
   leftTitleText: string;
   onExitClick: () => unknown;
@@ -10,7 +10,7 @@ export const ChatHeaderDarkWithBadgeCount = ({
   leftTitleText,
   onExitClick,
   badgeCount,
-}: Props) => {
+}: ChatHeaderDarkWithBadgeCountProps) => {
   return (
     <ChatHeaderAll
       badgeCount={badgeCount}

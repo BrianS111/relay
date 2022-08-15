@@ -1,7 +1,23 @@
 import styled from 'styled-components';
+import { useRef } from 'react';
 
-export const TextInput = () => {
-  return <Input type="text" placeholder="Select address or ENS name" />;
+export interface TextInputProps {
+  onChange?: () => unknown;
+  onSubmit?: () => unknown;
+}
+
+export const TextInput = ({ onChange, onSubmit }: TextInputProps) => {
+  const TextInputRef = useRef(null);
+
+  return (
+    <Input
+      ref={TextInputRef}
+      onChange={onChange}
+      onSubmit={onSubmit}
+      type="text"
+      placeholder="Select address or ENS name"
+    />
+  );
 };
 
 const Input = styled.input`

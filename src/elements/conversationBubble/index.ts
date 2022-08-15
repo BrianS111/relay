@@ -1,1 +1,1 @@
-export * from './ConversationBubble';
+export * from './ConversationBubbleComp';
