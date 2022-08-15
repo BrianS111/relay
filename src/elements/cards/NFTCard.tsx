@@ -4,7 +4,7 @@ import externalWindowBlue from '../../../public/assets/images/externalWindowBlue
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface NFTCardProps {
+export interface NFTCardProps {
   title: string;
   nftWebsite: string;
   nftLogo: StaticImageData;

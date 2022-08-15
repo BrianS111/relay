@@ -1,6 +1,6 @@
 import { Buttons } from './Buttons';
 
-interface SecondaryButtonProps {
+export interface SecondaryButtonProps {
   onClick?: () => unknown;
   textContent: string;
   icon?: StaticImageData;

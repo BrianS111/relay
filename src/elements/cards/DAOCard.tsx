@@ -3,7 +3,7 @@ import Image from 'next/image';
 import externalWindowBlue from '../../../public/assets/images/externalWindowBlue.png';
 import Link from 'next/link';
 
-interface DAOCardProps {
+export interface DAOCardProps {
   title: string;
   daoWebsite: string;
   daoLogo: StaticImageData;

@@ -6,7 +6,7 @@ export interface SwitchPrimaryProps {
   onClick?: () => unknown;
 }
 
-export const switchPrimary = ({
+export const SwitchPrimary = ({
   textContent,
   isPrimary,
   onClick,

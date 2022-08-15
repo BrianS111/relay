@@ -1,1 +1,1 @@
-export * from './switchPrimary';
+export * from './SwitchPrimary';

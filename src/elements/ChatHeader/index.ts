@@ -1,4 +1,3 @@
-export * from './ChatHeaderAll';
 export * from './ChatHeaderDarkExitOnly';
 export * from './ChatHeaderDarkMenuIcon';
 export * from './ChatHeaderDarkWithBadgeCount';

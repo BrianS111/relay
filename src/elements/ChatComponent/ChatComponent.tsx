@@ -1,7 +1,7 @@
 import { ReactChildren } from 'react';
 import styled from 'styled-components';
 
-interface ChatComponentProps {
+export interface ChatComponentProps {
   children: ReactChildren;
 }
 
