@@ -70,6 +70,12 @@ const Container = styled.div<{ isRequest: boolean }>`
   border-bottom: 1px solid rgba(35, 25, 59, 0.45);
   cursor: pointer;
 
+  @media (max-width: 440px) {
+    padding: 22px 10px;
+  }
+  @media (max-width: 400px) {
+    padding: 22px 3px;
+  }
   & > div:first-child {
     display: flex;
     & > div:last-child {
@@ -133,6 +139,10 @@ const StyledText = styled(Text)<{ isRequest: boolean }>`
   margin-left: 6px;
   margin-bottom: ${({ isRequest }) => (isRequest ? '0' : '5px')};
   color: #252727;
+
+  @media (max-width: 400px) {
+    font-size: 11px;
+  }
 `;
 
 function previewMessage(message: string): string {
