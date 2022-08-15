@@ -7,6 +7,7 @@ const size = {
   sm: '768px',
   lg: '1200px',
 };
+
 export const device = {
   mobile: `(max-width: ${size.sm})`,
   desktop: `(max-width: ${size.lg})`,
@@ -64,6 +65,90 @@ export const GlobalStyles = createGlobalStyle`
 .translucent {
   opacity: 0.2;
 }
+
+  @keyframes pageload {
+    0% {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes pageload2 {
+    0% {
+      opacity: .75;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes pageload3 {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    75% {
+      opacity: 0;
+      transform: translateY(40px);
+
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes cardload1 {
+    0% {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    25% {
+      opacity: 0;
+      transform: translateY(35px);
+
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes cardload2 {
+    0% {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(35px);
+
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes cardload3 {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    65% {
+      opacity: 0;
+      transform: translateY(35px);
+
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 
 @font-face {
   font-family: 'Inter';

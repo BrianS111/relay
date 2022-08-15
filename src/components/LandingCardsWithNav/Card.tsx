@@ -63,12 +63,11 @@ const Container = styled.div`
   width: 379px;
   min-width: 379px;
   max-height: 600px;
-
   @media (max-width: 925px) {
     width: 100%;
   }
   @media (max-width: 400px) {
-    min-width: 350px
+    min-width: 350px;
   }
 
   :hover {
@@ -83,6 +82,7 @@ const Container = styled.div`
       rgb(240, 243, 253) 0.35%,
       rgb(252, 240, 253) 99.18%
     );
+    animation: cardload1 500ms ease-in forwards;
   }
   :nth-of-type(2) {
     background: linear-gradient(
@@ -90,6 +90,7 @@ const Container = styled.div`
       rgb(254, 241, 225) 0%,
       rgb(253, 242, 202) 88.25%
     );
+    animation: cardload2 500ms ease-in forwards;
   }
   :nth-of-type(3) {
     background: linear-gradient(
@@ -97,6 +98,7 @@ const Container = styled.div`
       rgb(226, 247, 249) 0%,
       rgb(211, 243, 245) 100%
     );
+    animation: cardload3 500ms ease-in forwards;
   }
 `;
 

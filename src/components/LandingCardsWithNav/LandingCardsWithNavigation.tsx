@@ -145,6 +145,7 @@ const Container = styled.section`
 `;
 
 const Navbar = styled.nav`
+  animation: pageload3 1s forwards ease-in;
   @media (max-width: 925px) {
     width: 100%;
     padding: 0px 15px;
@@ -184,6 +185,7 @@ const Paragraph = styled.p`
   line-height: 1.5;
   font-weight: 300;
   margin-bottom: 10px;
+  animation: pageload3 1s forwards ease-in;
 `;
 
 const NavItemOne = styled(NavItem)<StyleProps>`

@@ -138,6 +138,7 @@ const H1 = styled.h1`
   margin-bottom: 16px;
   text-align: center;
   padding: 20px;
+  animation: pageload 500ms ease-in-out;
 `;
 
 const HeroSubText = styled.p`
@@ -151,6 +152,7 @@ const HeroSubText = styled.p`
   font-weight: 400;
   font-size: 18px;
   padding: 0px 20px;
+  animation: pageload 500ms ease-in-out;
 `;
 
 const ImageContainer = styled.div`
@@ -171,6 +173,7 @@ const CallToActionButton = styled.button`
   display: flex;
   align-items: center;
   margin-bottom: 80px;
+  animation: pageload 500ms ease-in-out forwards;
 
   &:hover {
     background-color: #626472;
@@ -188,6 +191,7 @@ const HeroUl = styled.ul`
   gap: 15px;
   margin-bottom: 75px;
   flex-wrap: wrap;
+  animation: pageload2 300ms ease-in-out forwards;
 `;
 
 const HeroLi = styled.li`
@@ -217,6 +221,7 @@ const ThreeDivContainer = styled.div`
   width: 100%;
   margin-bottom: 125px;
   flex-wrap: wrap;
+  animation: pageload 1s forwards ease-in-out;
   @media (max-width: 625px) {
     justify-content: center;
     flex-direction: column;
