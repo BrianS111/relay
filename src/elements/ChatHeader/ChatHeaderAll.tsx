@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import exitwhite from '../icons/exitwhite.png';
-import exitblack from '../icons/exitblack.png';
-import minimizewhite from '../icons/minimizewhite.png';
-import minimizeblack from '../icons/minimizeblack.png';
-import threedotmenuwhite from '../icons/threedotmenuwhite.png';
-import threedotmenublack from '../icons/threedotmenublack.png';
-import backarrowwhite from '../icons/backarrowwhite.png';
-import backarrowblack from '../icons/backarrowblack.png';
+import exitwhite from '../../../public/assets/images/exitwhite.png';
+import exitblack from '../../../public/assets/images/exitblack.png';
+import minimizewhite from '../../../public/assets/images/minimizewhite.png';
+import minimizeblack from '../../../public/assets/images/minimizeblack.png';
+import threedotmenuwhite from '../../../public/assets/images/threedotmenuwhite.png';
+import threedotmenublack from '../../../public/assets/images/threedotmenublack.png';
+import backarrowwhite from '../../../public/assets/images/backarrowwhite.png';
+import backarrowblack from '../../../public/assets/images/backarrowblack.png';
 import { useState } from 'react';
 
 export interface ChatHeaderAllProps {
