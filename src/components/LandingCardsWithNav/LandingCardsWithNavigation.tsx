@@ -186,19 +186,19 @@ const Paragraph = styled.p`
 `;
 
 const NavItemOne = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemOneActive ? '#25273d' : "787a9b")};
+  color: ${(props) => (props.itemOneActive ? '#25273d' : '787a9b')};
   background-color: ${(props) => (props.itemOneActive ? 'white' : '#f1f3f4')};
   box-shadow: ${(props) =>
     props.itemOneActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 const NavItemTwo = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemTwoActive ? "#25273d" : "#787a9b")};
+  color: ${(props) => (props.itemTwoActive ? '#25273d' : '#787a9b')};
   background-color: ${(props) => (props.itemTwoActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemTwoActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 const NavItemThree = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemThreeActive ? '#25273d' : "#787a9b")};
+  color: ${(props) => (props.itemThreeActive ? '#25273d' : '#787a9b')};
   background-color: ${(props) => (props.itemThreeActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemThreeActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};

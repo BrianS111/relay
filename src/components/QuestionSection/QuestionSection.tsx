@@ -42,31 +42,31 @@ export default function QuestionSection() {
     <Container>
       <Header>Have Some questions?</Header>
       <CardContainer>
-      {ListItems.map((e, index) => {
-        return (
-          <QuestionCard
-            key={index}
-            TitleText={e.TitleText}
-            ParagraphText={e.ParagraphText}
-            ListItemsText={e.ListItemsText}
-          />
-        );
-      })}
+        {ListItems.map((e, index) => {
+          return (
+            <QuestionCard
+              key={index}
+              TitleText={e.TitleText}
+              ParagraphText={e.ParagraphText}
+              ListItemsText={e.ListItemsText}
+            />
+          );
+        })}
       </CardContainer>
     </Container>
   );
 }
 
 const Container = styled.section`
-margin-top: 225px;
-margin-bottom: 275px;
-padding-left: 20px;
-padding-right: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-max-width: 1200px;
+  margin-top: 225px;
+  margin-bottom: 275px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
 `;
 
 const CardContainer = styled.div`
@@ -76,7 +76,7 @@ const CardContainer = styled.div`
   gap: 30px;
   width: 100%;
   flex-wrap: wrap;
-`
+`;
 
 const Header = styled.h2`
   margin-bottom: 25px;

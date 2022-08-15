@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Header from './Header/Header';
-import Footer from './Footer/Footer'
+import Footer from './Footer/Footer';
 
 export default function Layout(props: any) {
   return (

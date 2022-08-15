@@ -23,12 +23,14 @@ export default function GetStarted() {
         <BigGetStartedCard />
         <SmallCardContainer>
           {SmallCardInfo.map((e, index) => {
-           return <SmallGetStartedCard
-              key={index}
-              SpanText={e.SpanText}
-              TitleText={e.TitleText}
-              ParagraphText={e.ParagraphText}
-            />;
+            return (
+              <SmallGetStartedCard
+                key={index}
+                SpanText={e.SpanText}
+                TitleText={e.TitleText}
+                ParagraphText={e.ParagraphText}
+              />
+            );
           })}
         </SmallCardContainer>
       </CardContainer>
@@ -48,8 +50,6 @@ const Container = styled.section`
   }
 `;
 
-
-
 const H2 = styled.h2`
   font-size: 32px;
   margin-bottom: 45px;
@@ -59,9 +59,9 @@ const H2 = styled.h2`
 `;
 
 const CardContainer = styled.div`
-display: flex;
-gap: 35px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
 `;
 
 const SmallCardContainer = styled.div`

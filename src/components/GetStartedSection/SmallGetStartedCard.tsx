@@ -104,13 +104,11 @@ const Paragraph = styled.p`
 `;
 
 const LinkContainer = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `;
-
 
 const Span = styled.span`
   margin-right: 8px;
   color: ${(props) => props.theme.colors.black};
 `;
-

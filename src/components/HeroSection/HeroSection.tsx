@@ -7,8 +7,8 @@ import { useEffect } from 'react';
 
 export default function HeroSection() {
   useEffect(() => {
-    console.log("effect")
-  },[])
+    console.log('effect');
+  }, []);
   return (
     <Container>
       <TopHeroButton>
@@ -75,7 +75,7 @@ const Container = styled.section`
 const InnerIconContainer = styled.div`
   transform: translateX(0px);
   transition: transform 200ms ease;
-  min-width: 15px ;
+  min-width: 15px;
   min-height: 15px;
   display: flex;
   align-items: center;
@@ -198,7 +198,7 @@ const HeroLi = styled.li`
   gap: 15px;
   color: #787a9b;
   background-color: rgb(255, 255, 255 0.8);
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   padding: 10px 32px;
   transition: background-color 200ms;
   cursor: pointer;

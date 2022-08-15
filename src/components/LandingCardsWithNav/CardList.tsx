@@ -21,8 +21,8 @@ export default function CardList({ CardListItems }: Props) {
   );
 }
 const Ul = styled.ul`
-display: flex;
-width: 100%;
-flex-direction: column;
-margin-bottom: 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 30px;
 `;

@@ -60,7 +60,7 @@ const Input = styled.input`
   border: none;
   font-size: 16px;
   color: ${(props) => props.theme.colors.black};
-  
+
   ::placeholder {
     color: rgb(37, 39, 61, 0.5);
     font-weight: 300;
