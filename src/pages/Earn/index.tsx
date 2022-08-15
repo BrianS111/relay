@@ -1,10 +1,7 @@
-import Header from '../../components/Header/Header';
-import styled from 'styled-components';
+import Earn from './Earn';
 
-export default function index() {
-  return (
-    <div>
-      Earn
-    </div>
-  );
+function Index() {
+  return <Earn />;
 }
+
+export default Index;

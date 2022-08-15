@@ -27,6 +27,8 @@ interface Colors {
   error: string;
   success: string;
   warning: string;
+  black: string;
+  light: string;
 }
 export interface Theme {
   colors: Colors;

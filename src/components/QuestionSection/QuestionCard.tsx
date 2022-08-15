@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import ListItem from './ListItem';
 import cubes from '../../images/cubes.png';
 import bubbles from '../../images/bubbles.png';
-const black = '#25273d';
-const light = '#787a9b';
-
 interface Props {
   ListItemsText: any;
   TitleText: string;
@@ -72,18 +69,17 @@ const Container = styled.div`
 `;
 
 const Title = styled.h3`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: bold;
 `;
 
 const Paragraph = styled.p`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   width: 90%;
   line-height: 1.5;
   font-weight: 400;
   margin-bottom: 50px;
 `;
-const List = styled.ul`
-`;
+const List = styled.ul``;

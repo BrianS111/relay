@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import blackArrowRight from '../../images/blackArrowRight.png';
-const black = '#25273d';
-const light = '#787a9b';
+
 export default function Subscribe() {
   return (
     <Container>
@@ -27,7 +26,7 @@ export default function Subscribe() {
 }
 
 const Container = styled.div`
-  padding: 200px 0px;
+  padding: 200px 0px 100px 0px;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -60,8 +59,8 @@ const Input = styled.input`
   outline: none;
   border: none;
   font-size: 16px;
-  color: ${black};
-
+  color: ${(props) => props.theme.colors.black};
+  
   ::placeholder {
     color: rgb(37, 39, 61, 0.5);
     font-weight: 300;
@@ -82,7 +81,7 @@ const SubmitContainer = styled.section`
   align-items: center;
   height: calc(100% + 30px);
   cursor: pointer;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   :hover {
     ${IconContainer} {
       transform: translateX(6px);
@@ -93,7 +92,7 @@ const SubmitContainer = styled.section`
 const Button = styled.button`
   background: transparent;
   border: none;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 14px;
   cursor: pointer;
 `;

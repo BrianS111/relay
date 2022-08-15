@@ -3,9 +3,6 @@ import Image from 'next/image';
 import blackArrowRight from '../../images/blackArrowRight.png';
 import dai from '../../images/dai.png';
 import safe from '../../images/safe.png';
-
-const black = '#25273d';
-const light = '#787a9b';
 interface Props {
   TitleText: string;
   ParagraphText: string;
@@ -94,16 +91,16 @@ const Container = styled.div`
 const H3 = styled.h3`
   margin: 8px 0px;
   font-weight: bold;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 24px;
 `;
 
 const Paragraph = styled.p`
-color: ${light};
-line-height: 1.5;
-width: 70%;
-font-weight: 400;
-margin-bottom: 30px;
+  color: ${(props) => props.theme.colors.light};
+  line-height: 1.5;
+  width: 70%;
+  font-weight: 400;
+  margin-bottom: 30px;
 `;
 
 const LinkContainer = styled.div`
@@ -114,6 +111,6 @@ align-items: center;
 
 const Span = styled.span`
   margin-right: 8px;
-  color: ${black}
+  color: ${(props) => props.theme.colors.black};
 `;
 

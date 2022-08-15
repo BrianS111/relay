@@ -4,9 +4,6 @@ import { useState, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import downarrow from '../../images/downarrow.png';
 
-const black = '#25273d';
-const light = '#787a9b';
-
 export default function LandingCardsWithNavigation() {
   const [itemOneActive, setItemOneActive] = useState(false);
   const [itemTwoActive, setItemTwoActive] = useState(true);
@@ -173,13 +170,13 @@ const NavItem = styled.li`
   box-sizing: content-box;
 
   :hover {
-    color: ${black};
+    color: ${(props) => props.theme.colors.black};
   }
 `;
 
 const Paragraph = styled.p`
   padding: 32px 64px;
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   text-align: center;
   max-width: 700px;
   line-height: 1.5;
@@ -189,19 +186,19 @@ const Paragraph = styled.p`
 `;
 
 const NavItemOne = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemOneActive ? `${black}` : `${light}`)};
+  color: ${(props) => (props.itemOneActive ? '#25273d' : "787a9b")};
   background-color: ${(props) => (props.itemOneActive ? 'white' : '#f1f3f4')};
   box-shadow: ${(props) =>
     props.itemOneActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 const NavItemTwo = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemTwoActive ? `${black}` : `${light}`)};
+  color: ${(props) => (props.itemTwoActive ? "#25273d" : "#787a9b")};
   background-color: ${(props) => (props.itemTwoActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemTwoActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 const NavItemThree = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemThreeActive ? `${black}` : `${light}`)};
+  color: ${(props) => (props.itemThreeActive ? '#25273d' : "#787a9b")};
   background-color: ${(props) => (props.itemThreeActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemThreeActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};

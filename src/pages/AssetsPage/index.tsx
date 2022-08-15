@@ -1,11 +1,7 @@
-import React from 'react'
-import Header from '../../components/Header/Header'
-import styled from 'styled-components'
+import AssetsPage from './AssetsPage';
 
-export default function index() {
-  return (
-    <div>
-      assets
-    </div>
-  )
+function Index() {
+  return <AssetsPage />;
 }
+
+export default Index;

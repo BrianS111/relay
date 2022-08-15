@@ -3,9 +3,6 @@ import Image from 'next/image';
 import blackArrowRight from '../../images/blackArrowRight.png';
 import SocialContainer from './SocialContainer';
 
-const black = '#25273d';
-const light = '#787a9b';
-
 export default function FooterSubscribeSection() {
   return (
     <Container>
@@ -75,6 +72,7 @@ const Container = styled.div`
   max-width: 1200px;
   height: 300px;
   gap: 15px;
+  margin-top: 150px;
 
   @media (max-width: 860px) {
     flex-direction: column;
@@ -85,13 +83,13 @@ const Container = styled.div`
 `;
 
 const H3 = styled.h3`
-@media (max-width: 400px) {
-  text-align: center;
-}
+  @media (max-width: 400px) {
+    text-align: center;
+  }
 `;
 
 const Span = styled.span`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   font-weight: 300;
 
   @media (max-width: 400px) {
@@ -129,7 +127,7 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
 `;
 
 const RightContainer = styled.div`
@@ -140,7 +138,7 @@ const RightContainer = styled.div`
 `;
 
 const Ul = styled.ul`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 18px;
   font-weight: 600;
   max-width: 100px;
@@ -149,7 +147,7 @@ const Ul = styled.ul`
 const Li = styled.li`
   font-size: 16px;
   font-weight: 300;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   margin-bottom: 30px;
   cursor: pointer;
   text-align: center;
@@ -180,6 +178,6 @@ const List = styled.div`
   margin-bottom: 15px !important;
 `;
 const ListTitle = styled.h3`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   text-align: center;
 `;

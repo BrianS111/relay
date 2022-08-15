@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import QuestionCard from './QuestionCard';
-const black = '#25273d';
 
 export default function QuestionSection() {
   const ListItems = [
@@ -80,9 +79,9 @@ const CardContainer = styled.div`
 `
 
 const Header = styled.h2`
-margin-bottom: 25px;
-font-size: 32px;
-color: ${black};
-font-weight: 500;
-text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+  color: ${(props) => props.theme.colors.black};
+  font-weight: 500;
+  text-align: center;
 `;

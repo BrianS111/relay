@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-const black = '#25273d';
-const light = '#787a9b';
-
 interface Props {
   ListItemTitleText: string;
   ListItemDataText: string;
@@ -29,9 +26,9 @@ const ListItem = styled.li`
 `;
 
 const ListItemTitle = styled.span`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
 `;
 
 const ListItemData = styled.div`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
 `;

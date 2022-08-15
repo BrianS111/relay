@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import BigGetStartedCard from './BigGetStartedCard';
 import SmallGetStartedCard from './SmallGetStartedCard';
-const black = '#25273d';
 
 export default function GetStarted() {
   const SmallCardInfo = [
@@ -52,11 +51,11 @@ const Container = styled.section`
 
 
 const H2 = styled.h2`
-font-size: 32px;
-margin-bottom: 45px;
-font-weight: 400;
-color: ${black};
-text-align: center
+  font-size: 32px;
+  margin-bottom: 45px;
+  font-weight: 400;
+  color: ${(props) => props.theme.colors.black};
+  text-align: center;
 `;
 
 const CardContainer = styled.div`

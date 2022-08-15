@@ -36,6 +36,8 @@ export const theme: DefaultTheme | any = {
     error: '#F77272',
     success: '#69C978',
     warning: '#E8BB47',
+    black: '#25273d',
+    light: '#787a9b',
   },
   fontFamily: {
     Inter: FontFamilyEnum.Inter,

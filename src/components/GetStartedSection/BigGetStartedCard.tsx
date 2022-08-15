@@ -3,8 +3,6 @@ import Image from 'next/image';
 import blackArrowRight from '../../images/blackArrowRight.png';
 import pills from '../../images/pills.png';
 
-const black = '#25273d';
-const light = '#787a9b';
 export default function BigGetStartedCard() {
   return (
     <Container>
@@ -67,11 +65,11 @@ const Container = styled.div`
 const H3 = styled.h3`
   margin: 8px 0px;
   font-size: 24px;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-weight: 600;
 `;
 const Paragraph = styled.p`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   line-height: 1.5;
   font-weight: 400;
   margin-bottom: 30px;

@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import CardList from './CardList';
-const black = '#25273d';
-const light = '#787a9b';
-
 interface Props {
   HeaderTitleText: string;
   HeaderParagraphText: string;
@@ -120,13 +117,13 @@ const HeaderText = styled.div`
 `;
 const HeaderTitle = styled.h2`
   font-size: 18px;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-weight: 600;
   text-align: left;
   line-height: 1.5;
 `;
 const HeaderParagraph = styled.p`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   font-size: 14px;
   text-align: left;
   line-height: 1.5;
@@ -151,12 +148,12 @@ const MiddleContainer = styled.div<StyleProps>`
   background-color: ${(props) => props.MiddleContainerColor};
 `;
 const MiddleTitle = styled.h3`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   font-size: 16px;
 `;
 
 const MiddleParagraph = styled.p`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-weight: 600;
   line-height: 28px;
   font-size: 18px;
@@ -165,7 +162,7 @@ const MiddleParagraph = styled.p`
 
 const Button = styled.button`
   border-radius: 32px;
-  background-color: ${black};
+  background-color: ${(props) => props.theme.colors.black};
   padding: 8px 16px;
   cursor: pointer;
   color: white;

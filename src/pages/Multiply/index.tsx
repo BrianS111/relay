@@ -1,10 +1,7 @@
-import Header from '../../components/Header/Header';
-import styled from 'styled-components';
+import Multiply from './Multiply';
 
-export default function index() {
-  return (
-    <div>
-      Multiply
-    </div>
-  );
+function Index() {
+  return <Multiply />;
 }
+
+export default Index;

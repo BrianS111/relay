@@ -1,10 +1,7 @@
-import Header from '../../components/Header/Header';
-import styled from 'styled-components'
+import Borrow from './Borrow';
 
-export default function index() {
-  return (
-    <div>
-     Borrow
-    </div>
-  );
+function Index() {
+  return <Borrow />;
 }
+
+export default Index;

@@ -5,10 +5,6 @@ import whiteArrowRight from '../../images/whiteArrowWhite.png';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-const black = '#25273d';
-const light = '#787a9b';
-
-
 export default function HeroSection() {
   useEffect(() => {
     console.log("effect")
@@ -89,7 +85,7 @@ const InnerIconContainer = styled.div`
 const TopHeroButton = styled.button`
   cursor: pointer;
   border-radius: 99rem;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -113,7 +109,7 @@ const InnerLeftCircle = styled.div`
   align-items: center;
   background: #fee9bf;
   padding: 8px;
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 14px;
   margin-right: 12px;
   font-weight: 600px;
@@ -124,14 +120,14 @@ const InnerLeftCircle = styled.div`
 `;
 
 const InnerText = styled.span`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 14px;
   font-weight: 600;
   margin-right: 8px;
 `;
 
 const H1 = styled.h1`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 52px;
   font-weight: 500;
   line-height: 52px;
@@ -165,7 +161,7 @@ const ImageContainer = styled.div`
 `;
 
 const CallToActionButton = styled.button`
-  background-color: ${black};
+  background-color: ${(props) => props.theme.colors.black};
   padding: 15px 40px;
   border: none;
   cursor: pointer;
@@ -243,12 +239,12 @@ const Div = styled.div`
 `;
 
 const H3 = styled.h3`
-  color: ${light};
+  color: ${(props) => props.theme.colors.light};
   font-size: 16px;
   margin-bottom: 15px;
 `;
 
 const Span = styled.span`
-  color: ${black};
+  color: ${(props) => props.theme.colors.black};
   font-size: 40px;
 `;
