@@ -51,6 +51,7 @@ const InputContainer = styled.div`
   padding: 16px 24px;
   max-width: 604px;
   width: 100%;
+  background-color: white;
 `;
 
 const Input = styled.input`
