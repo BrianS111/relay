@@ -239,6 +239,12 @@ const HamburgerMenuIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: white;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: #e6e9eb;
+  }
+  
   @media (min-width: 861px) {
     display: none;
   }

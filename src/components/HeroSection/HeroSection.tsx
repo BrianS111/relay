@@ -92,12 +92,13 @@ const TopHeroButton = styled.button`
   box-shadow: rgb(0 0 0 / 10%) 0px 0px 10px;
   margin-bottom: 40px;
   border: none;
-  background-color: white;
   padding: 4px;
   padding-right: 25px;
   transition: background-color 200ms;
+  background-color: white;
+
   &:hover {
-    background-color: rgb(0 0 0 / 3%);
+    background-color: rgb(255, 255, 255, 0.3);
     ${InnerIconContainer} {
       transform: translateX(8px);
     }
@@ -197,7 +198,7 @@ const HeroLi = styled.li`
   justify-content: center;
   gap: 15px;
   color: #787a9b;
-  background-color: rgb(255, 255, 255 0.8);
+  background-color: rgb(255, 255, 255, 0.5);
   border: 1px solid #eaeaea;
   padding: 10px 32px;
   transition: background-color 200ms;
