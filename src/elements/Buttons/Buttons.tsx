@@ -8,7 +8,12 @@ export interface ButtonsProps {
   textContent: string;
 }
 
-export const Buttons = ({ isPrimary, onClick, textContent, icon }: ButtonsProps) => {
+export const Buttons = ({
+  isPrimary,
+  onClick,
+  textContent,
+  icon,
+}: ButtonsProps) => {
   return (
     <Button
       style={{ cursor: onClick === undefined ? 'default' : 'pointer' }}

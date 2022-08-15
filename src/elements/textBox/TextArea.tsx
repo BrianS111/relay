@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
 
-export interface TextInputProps {
+export interface TextAreaProps {
   onChange?: () => unknown;
   onSubmit?: () => unknown;
 }
 
-export const TextArea = ({ onChange, onSubmit }: TextInputProps) => {
+export const TextArea = ({ onChange, onSubmit }: TextAreaProps) => {
   const TextInputRef = useRef(null);
 
   return (
