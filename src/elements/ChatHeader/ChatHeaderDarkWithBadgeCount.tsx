@@ -1,6 +1,6 @@
-import { ChatHeaderAll } from './ChatHeaderAll';
+import { ChatHeaderAll, ChatHeaderAllProps } from './ChatHeaderAll';
 
-export interface ChatHeaderDarkWithBadgeCountProps {
+export interface ChatHeaderDarkWithBadgeCountProps extends ChatHeaderAllProps {
   badgeCount: string;
   leftTitleText: string;
   onExitClick: () => unknown;

@@ -1,6 +1,6 @@
-import { ChatHeaderAll } from './ChatHeaderAll';
+import { ChatHeaderAll, ChatHeaderAllProps } from './ChatHeaderAll';
 
-export interface ChatHeaderDarkMenuIconProps {
+export interface ChatHeaderDarkMenuIconProps extends ChatHeaderAllProps {
   leftTitleText: string;
   subText: string;
   onExitClick: () => unknown;

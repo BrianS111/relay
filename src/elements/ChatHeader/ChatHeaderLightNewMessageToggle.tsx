@@ -1,6 +1,7 @@
-import { ChatHeaderAll } from './ChatHeaderAll';
+import { ChatHeaderAll, ChatHeaderAllProps } from './ChatHeaderAll';
 
-export interface ChatHeaderLightNewMessageToggleProps {
+export interface ChatHeaderLightNewMessageToggleProps
+  extends ChatHeaderAllProps {
   subText: string;
   leftTitleText: string;
   toggleIconLeft: StaticImageData;
