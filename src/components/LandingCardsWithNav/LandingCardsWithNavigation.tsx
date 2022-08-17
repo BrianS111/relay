@@ -8,6 +8,7 @@ export default function LandingCardsWithNavigation() {
   const [itemOneActive, setItemOneActive] = useState(false);
   const [itemTwoActive, setItemTwoActive] = useState(true);
   const [itemThreeActive, setItemThreeActive] = useState(true);
+  const [itemFourActive, setItemFourActive] = useState(true);
   const [isDropdownVisible, setIsDropdownVisible] = useState(true);
 
   //This is here to get rid of page glitch on first renders
@@ -15,17 +16,21 @@ export default function LandingCardsWithNavigation() {
     setItemOneActive(true);
     setItemTwoActive(false);
     setItemThreeActive(false);
+    setItemFourActive(false);
     setIsDropdownVisible(false);
   }, []);
 
   const handleItemOneClick = () => {
     setItemTwoActive(false);
     setItemThreeActive(false);
+    setItemFourActive(false);
     setItemOneActive(true);
   };
+
   const handleItemTwoClick = () => {
     setItemTwoActive(true);
     setItemThreeActive(false);
+    setItemFourActive(false);
     setItemOneActive(false);
   };
 
@@ -33,16 +38,27 @@ export default function LandingCardsWithNavigation() {
     setItemTwoActive(false);
     setItemThreeActive(true);
     setItemOneActive(false);
+    setItemFourActive(false);
+  };
+
+  const handleItemFourClick = () => {
+    setItemTwoActive(false);
+    setItemThreeActive(false);
+    setItemOneActive(false);
+    setItemFourActive(true);
   };
 
   const handleDropdownItemOneClick = () => {
     setItemTwoActive(false);
     setItemThreeActive(false);
+    setItemFourActive(false);
     setItemOneActive(true);
   };
+
   const handleDropdownItemTwoClick = () => {
     setItemTwoActive(true);
     setItemThreeActive(false);
+    setItemFourActive(false);
     setItemOneActive(false);
   };
 
@@ -50,6 +66,14 @@ export default function LandingCardsWithNavigation() {
     setItemTwoActive(false);
     setItemThreeActive(true);
     setItemOneActive(false);
+    setItemFourActive(false);
+  };
+
+  const handleDropdownItemFourClick = () => {
+    setItemTwoActive(false);
+    setItemThreeActive(false);
+    setItemOneActive(false);
+    setItemFourActive(true);
   };
 
   const handleDropdownClick = () => {
@@ -58,12 +82,14 @@ export default function LandingCardsWithNavigation() {
 
   return (
     <Container>
+      <H2>Products</H2>
       <Navbar>
         <NavDropdown onClick={handleDropdownClick}>
           <DropDownTitle>
-            {itemOneActive && 'Multiply on Oasis'}
-            {itemTwoActive && 'Borrow on Oasis'}
-            {itemThreeActive && 'Earn on Oasis'}
+            {itemOneActive && 'Relay'}
+            {itemTwoActive && 'Receiver'}
+            {itemThreeActive && 'Bridge'}
+            {itemFourActive && 'Pro'}
             <FlexRow>
               <Line />
               <DownArrowContainer>
@@ -79,13 +105,16 @@ export default function LandingCardsWithNavigation() {
           {isDropdownVisible && (
             <DropDownItems>
               <DropdownItem onClick={handleDropdownItemOneClick}>
-                Multiply on Oasis
+                Relay
               </DropdownItem>
               <DropdownItem onClick={handleDropdownItemTwoClick}>
-                Borrow on Oasis
+                Receiver
               </DropdownItem>
               <DropdownItem onClick={handleDropdownItemThreeClick}>
-                Earn on Oasis
+                Bridge
+              </DropdownItem>
+              <DropdownItem onClick={handleDropdownItemFourClick}>
+                Pro
               </DropdownItem>
             </DropDownItems>
           )}
@@ -94,32 +123,37 @@ export default function LandingCardsWithNavigation() {
           <NavItemOne
             itemOneActive={itemOneActive}
             onClick={handleItemOneClick}>
-            Multiply on Oasis
+            Relay
           </NavItemOne>
           <NavItemTwo
             itemTwoActive={itemTwoActive}
             onClick={handleItemTwoClick}>
-            Borrow on Oasis
+            Receiver
           </NavItemTwo>
           <NavItemThree
             itemThreeActive={itemThreeActive}
             onClick={handleItemThreeClick}>
-            Earn on Oasis
+            Bridge
           </NavItemThree>
+          <NavItemFour
+            itemFourActive={itemFourActive}
+            onClick={handleItemFourClick}>
+            Pro
+          </NavItemFour>
         </NavItems>
       </Navbar>
       <Paragraph>
-        {itemOneActive &&
-          'Multiply your exposure to your favorite crypto assets. Browse our featured products here.'}
+        {itemOneActive && 'XMTP message inbox and web3 profiles'}
         {itemTwoActive &&
-          'Borrow Dai against your favorite crypto assets. Use the Dai however you like.'}
-        {itemThreeActive &&
-          'Put your crypto assets to work today. Start generating the best yields. Select your Earn product below.'}
+          'A chat box for any website, for users to communicate with other users or the website'}
+        {itemThreeActive && 'Send mass messages to a criteria of wallets'}
+        {itemFourActive && 'An XMTP bot that can send and receive messages'}
       </Paragraph>
       <CardContainer
         itemOneActive={itemOneActive}
         itemTwoActive={itemTwoActive}
         itemThreeActive={itemThreeActive}
+        itemFourActive={itemFourActive}
       />
     </Container>
   );
@@ -129,6 +163,7 @@ interface StyleProps {
   itemOneActive?: boolean;
   itemTwoActive?: boolean;
   itemThreeActive?: boolean;
+  itemFourActive?: boolean;
 }
 
 const Container = styled.section`
@@ -141,8 +176,16 @@ const Container = styled.section`
   border-radius: 99rem;
 `;
 
+const H2 = styled.h2`
+  font-size: 52px;
+  color: ${(props) => props.theme.colors.black};
+  margin-bottom: 30px;
+  animation: pageload3 1s forwards ease-in;
+`;
+
 const Navbar = styled.nav`
   animation: pageload3 1s forwards ease-in;
+
   @media (max-width: 925px) {
     width: 100%;
     padding: 0px 15px;
@@ -186,7 +229,7 @@ const Paragraph = styled.p`
 `;
 
 const NavItemOne = styled(NavItem)<StyleProps>`
-  color: ${(props) => (props.itemOneActive ? '#25273d' : '787a9b')};
+  color: ${(props) => (props.itemOneActive ? '#25273d' : '#787a9b')};
   background-color: ${(props) => (props.itemOneActive ? 'white' : '#f1f3f4')};
   box-shadow: ${(props) =>
     props.itemOneActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
@@ -202,6 +245,13 @@ const NavItemThree = styled(NavItem)<StyleProps>`
   background-color: ${(props) => (props.itemThreeActive ? 'white' : 'f1f3f4')};
   box-shadow: ${(props) =>
     props.itemThreeActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
+`;
+
+const NavItemFour = styled(NavItem)<StyleProps>`
+  color: ${(props) => (props.itemFourActive ? '#25273d' : '#787a9b')};
+  background-color: ${(props) => (props.itemFourActive ? 'white' : 'f1f3f4')};
+  box-shadow: ${(props) =>
+    props.itemFourActive ? 'rgb(37 39 61 / 15%) 0px 1px 6px;' : 'none'};
 `;
 
 const NavDropdown = styled.ul`
@@ -260,4 +310,5 @@ const DropDownItems = styled.div`
   flex-direction: column;
   box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
   border: 1px solid rgb(204, 204, 204);
+  background-color: white;
 `;

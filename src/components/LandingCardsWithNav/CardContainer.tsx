@@ -3,17 +3,20 @@ import Card from './Card';
 import { CardsOne } from './CardData';
 import { CardsTwo } from './CardData';
 import { CardsThree } from './CardData';
+import { CardsFour } from './CardData';
 
 interface Props {
   itemOneActive: boolean;
   itemTwoActive: boolean;
   itemThreeActive: boolean;
+  itemFourActive: boolean;
 }
 
 export default function CardContainer({
   itemOneActive,
   itemTwoActive,
   itemThreeActive,
+  itemFourActive,
 }: Props) {
   return (
     <Container>
@@ -29,6 +32,7 @@ export default function CardContainer({
               ButtonText={e.ButtonText}
               CardListItems={e.CardListItems}
               MiddleContainerColor={e.MiddleContainerColor}
+              ButtonUrl={e.ButtonUrl}
             />
           );
         })}
@@ -44,6 +48,7 @@ export default function CardContainer({
               ButtonText={e.ButtonText}
               CardListItems={e.CardListItems}
               MiddleContainerColor={e.MiddleContainerColor}
+              ButtonUrl={e.ButtonUrl}
             />
           );
         })}
@@ -59,6 +64,23 @@ export default function CardContainer({
               ButtonText={e.ButtonText}
               CardListItems={e.CardListItems}
               MiddleContainerColor={e.MiddleContainerColor}
+              ButtonUrl={e.ButtonUrl}
+            />
+          );
+        })}
+      {itemFourActive &&
+        CardsFour.map((e: any, index: number) => {
+          return (
+            <Card
+              key={index}
+              HeaderTitleText={e.HeaderTitleText}
+              HeaderParagraphText={e.HeaderParagraphText}
+              MiddleTitleText={e.MiddleTitleText}
+              MiddleParagraphText={e.MiddleParagraphText}
+              ButtonText={e.ButtonText}
+              CardListItems={e.CardListItems}
+              MiddleContainerColor={e.MiddleContainerColor}
+              ButtonUrl={e.ButtonUrl}
             />
           );
         })}
@@ -75,7 +97,8 @@ const Container = styled.div`
   padding: 32px;
   border-radius: 20px;
 
-  @media (max-width: 860px) {
+  @media (max-width: 897px) {
     gap: 20px;
+    padding: 3px;
   }
 `;

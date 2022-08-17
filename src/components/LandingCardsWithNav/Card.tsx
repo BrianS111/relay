@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import CardList from './CardList';
+import Link from 'next/link'
 interface Props {
   HeaderTitleText: string;
   HeaderParagraphText: string;
@@ -8,6 +9,7 @@ interface Props {
   ButtonText: string;
   CardListItems: any;
   MiddleContainerColor: string;
+  ButtonUrl: string;
 }
 
 export default function Card({
@@ -18,6 +20,7 @@ export default function Card({
   ButtonText,
   CardListItems,
   MiddleContainerColor,
+  ButtonUrl,
 }: Props) {
   return (
     <Container>
@@ -35,7 +38,11 @@ export default function Card({
         <MiddleParagraph>{MiddleParagraphText}</MiddleParagraph>
       </MiddleContainer>
       <CardList CardListItems={CardListItems} />
+      <Link href={ButtonUrl || ""} passHref>
+        <ButtonLink>
       <Button>{ButtonText}</Button>
+      </ButtonLink>
+      </Link>
     </Container>
   );
 }
@@ -58,13 +65,10 @@ const Container = styled.div`
   border-radius: 20px;
   margin: 15px;
   width: 379px;
-  min-width: 379px;
-  max-height: 600px;
   @media (max-width: 925px) {
     width: 100%;
   }
   @media (max-width: 400px) {
-    min-width: 350px;
   }
 
   :hover {
@@ -173,3 +177,7 @@ const Button = styled.button`
   border: none;
   box-shadow: rgb(0 0 0 / 13%) 0px 2px 8px;
 `;
+
+const ButtonLink = styled.a`
+text-decoration: none;
+`

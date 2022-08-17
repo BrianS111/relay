@@ -19,7 +19,7 @@ export default function QuestionCard({
       <Paragraph>{ParagraphText}</Paragraph>
       <List>
         {ListItemsText.map((e: any, index: any) => {
-          return <ListItem key={index} ListItemsText={e.itemTitle} />;
+          return <ListItem  key={index} ListItemsText={e.itemTitle} ListItemsUrl={e.itemUrl} />;
         })}
       </List>
     </Container>
@@ -66,6 +66,7 @@ const Container = styled.div`
   @media (max-width: 897px) {
     width: 100%;
   }
+
 `;
 
 const Title = styled.h3`
@@ -82,4 +83,5 @@ const Paragraph = styled.p`
   font-weight: 400;
   margin-bottom: 50px;
 `;
+
 const List = styled.ul``;

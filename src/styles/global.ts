@@ -3,15 +3,15 @@ import 'styled-components';
 import { FontFamilyEnum } from './global.d';
 import { DefaultTheme } from 'styled-components';
 
-const size = {
-  sm: '768px',
-  lg: '1200px',
-};
+// const size = {
+//   sm: '768px',
+//   lg: '1200px',
+// };
 
-export const device = {
-  mobile: `(max-width: ${size.sm})`,
-  desktop: `(max-width: ${size.lg})`,
-};
+// export const device = {
+//   mobile: `(max-width: ${size.sm})`,
+//   desktop: `(max-width: ${size.lg})`,
+// };
 
 // TODO - we need to have one declaration file,
 // right now sybil also extending styled-components, hence 'any'

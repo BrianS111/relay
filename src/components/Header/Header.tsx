@@ -1,16 +1,39 @@
 import styled from 'styled-components';
-import oasisLogo from '../../images/logo.svg';
 import blackArrowRight from '../../images/blackArrowRight.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import panellogo from '../../images/PanelLogo.png';
+import ProductsDropdown from './ProductsDropdown';
+import { useLayoutEffect } from 'react';
 
 export default function Header() {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+  const [isProductsHovered, setIsProductsHovered] = useState(true);
+  const [isProductsHamburgerHovered, setIsProductsHamburgerHovered] =
+    useState(true);
 
   const handleMenuClick = () => {
     setIsHamburgerMenuOpen((isHamburgerMenuOpen) => !isHamburgerMenuOpen);
   };
+
+  const handleProductsMouseEnter = () => {
+    setIsProductsHovered(true);
+  };
+  const handleProductsMouseLeave = () => {
+    setIsProductsHovered(false);
+  };
+  const handleProductsHamburgerMouseEnter = () => {
+    setIsProductsHamburgerHovered(true);
+  };
+  const handleProductsHamburgerMouseLeave = () => {
+    setIsProductsHamburgerHovered(false);
+  };
+
+  useLayoutEffect(() => {
+    setIsProductsHovered(false);
+    setIsProductsHamburgerHovered(false);
+  }, []);
 
   return (
     <Container>
@@ -18,35 +41,39 @@ export default function Header() {
         <Link href="/" passHref>
           <ImageContainer>
             <Image
-              height={31}
-              width={98}
-              src={oasisLogo}
+              height={30}
+              width={34}
+              src={panellogo}
               alt="Panel Logo"
               priority={true}
             />
+            <ImageText>Relay</ImageText>
           </ImageContainer>
         </Link>
         <Nav>
           <NavUl>
             <NavLi>
-              <Link href="/Multiply" passHref>
-                <NavA>Multiply</NavA>
+              <Link href="/About" passHref>
+                <NavA target="_blank">About</NavA>
               </Link>
             </NavLi>
             <NavLi>
-              <Link href="/Borrow" passHref>
-                <NavA>Borrow</NavA>
+              <Link href="https://docs.relay.cc" passHref>
+                <NavA target="_blank">Docs</NavA>
               </Link>
             </NavLi>
             <NavLi>
-              <Link href="/Earn" passHref>
-                <NavA>Earn</NavA>
+              <Link href="https://jobs.lever.co/daopanel" passHref>
+                <NavA target="_blank">Careers</NavA>
               </Link>
             </NavLi>
             <NavLi>
-              <Link href="/AssetsPage" passHref>
-                <NavA>Assets</NavA>
-              </Link>
+              <ProductsNav
+                onMouseEnter={handleProductsMouseEnter}
+                onMouseLeave={handleProductsMouseLeave}>
+                Products
+                {isProductsHovered && <ProductsDropdown />}
+              </ProductsNav>
             </NavLi>
           </NavUl>
         </Nav>
@@ -70,33 +97,37 @@ export default function Header() {
             <Link href="/" passHref>
               <ImageContainer onClick={handleMenuClick}>
                 <Image
-                  height={31}
-                  width={98}
-                  src={oasisLogo}
+                  height={30}
+                  width={34}
+                  src={panellogo}
                   alt="Panel Logo"
                   priority={true}
                 />
+                <ImageText>Relay</ImageText>
               </ImageContainer>
             </Link>
             <HamburgerMenuListItem onClick={handleMenuClick}>
-              <Link href="/Multiply" passHref>
-                <HamburgerA>Multiply</HamburgerA>
+              <Link href="/About" passHref>
+                <HamburgerA>About</HamburgerA>
               </Link>
             </HamburgerMenuListItem>
             <HamburgerMenuListItem onClick={handleMenuClick}>
-              <Link href="/Borrow" passHref>
-                <HamburgerA>Borrow</HamburgerA>
+              <Link href="https://docs.relay.cc" passHref>
+                <HamburgerA>Docs</HamburgerA>
               </Link>
             </HamburgerMenuListItem>
             <HamburgerMenuListItem onClick={handleMenuClick}>
-              <Link href="/Earn" passHref>
-                <HamburgerA>Earn</HamburgerA>
+              <Link href="https://jobs.lever.co/daopanel" passHref>
+                <HamburgerA>Careers</HamburgerA>
               </Link>
             </HamburgerMenuListItem>
-            <HamburgerMenuListItem onClick={handleMenuClick}>
-              <Link href="/AssetsPage" passHref>
-                <HamburgerA>Assets</HamburgerA>
-              </Link>
+            <HamburgerMenuListItem>
+              <ProductsHamburger
+                onMouseEnter={handleProductsHamburgerMouseEnter}
+                onMouseLeave={handleProductsHamburgerMouseLeave}>
+                Products
+                {isProductsHamburgerHovered && <ProductsDropdown />}
+              </ProductsHamburger>
             </HamburgerMenuListItem>
           </HamburgerMenuList>
           <ExitMenuIconContainer onClick={handleMenuClick}>
@@ -116,17 +147,21 @@ export default function Header() {
       )}
       <RightGroup>
         <NavRightButtonsContainer>
-          <RightButton>
-            Connect Wallet
-            <ConnectArrowContainer>
-              <Image
-                width={14}
-                height={11}
-                src={blackArrowRight}
-                alt="Connect"
-              />
-            </ConnectArrowContainer>
-          </RightButton>
+          <Link href={'https://relay.cc'} passHref>
+            <A target='_blank'>
+              <RightButton>
+                Launch App
+                <ConnectArrowContainer>
+                  <Image
+                    width={14}
+                    height={11}
+                    src={blackArrowRight}
+                    alt="Launch Relay App"
+                  />
+                </ConnectArrowContainer>
+              </RightButton>
+            </A>
+          </Link>
         </NavRightButtonsContainer>
       </RightGroup>
     </Container>
@@ -138,20 +173,17 @@ const ImageContainer = styled.a`
   align-items: center;
   justify-content: center;
   margin-right: 50px;
-  height: 41px;
-  height: 41px;
-  width: 98px;
   cursor: pointer;
+  text-decoration: none;
 `;
 
 const Container = styled.header`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 30px;
-  max-width: 1200px;
-  margin-bottom: 75px;
+  width: 100%;
+  max-width: 900px;
   overflow: none;
 `;
 
@@ -181,6 +213,23 @@ const NavA = styled.a`
   margin-right: 50px;
   text-decoration: none;
 
+  &:hover {
+    color: ${(props) => props.theme.colors.black};
+  }
+`;
+
+const ProductsNav = styled.div`
+  color: #787a9b;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 200ms ease;
+  margin-right: 50px;
+  text-decoration: none;
+  position: relative;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
   &:hover {
     color: ${(props) => props.theme.colors.black};
   }
@@ -244,7 +293,7 @@ const HamburgerMenuIconContainer = styled.div`
   &:hover {
     background-color: #e6e9eb;
   }
-  
+
   @media (min-width: 861px) {
     display: none;
   }
@@ -258,7 +307,7 @@ const RightGroup = styled.div`
 
 const HamburgerMenu = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: white;
   position: fixed;
   top: 0;
@@ -274,6 +323,7 @@ const HamburgerMenu = styled.div`
 const HamburgerMenuList = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 35px;
 `;
 
@@ -282,6 +332,13 @@ const HamburgerA = styled.a`
   color: ${(props) => props.theme.colors.light};
   cursor: pointer;
   text-decoration: none;
+`;
+const ProductsHamburger = styled.div`
+  color: ${(props) => props.theme.colors.light};
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 25px;
 `;
 
 const ExitMenuIconContainer = styled.div`
@@ -294,4 +351,14 @@ const ExitMenuIconContainer = styled.div`
   align-items: center;
   justify-content: center;
   align-self: center;
+`;
+
+const ImageText = styled.span`
+  font-size: 24px;
+  color: ${(props) => props.theme.colors.black};
+  margin-left: 10px;
+`;
+
+const A = styled.a`
+  text-decoration: none;
 `;

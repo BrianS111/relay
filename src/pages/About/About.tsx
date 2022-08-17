@@ -5,10 +5,9 @@ import Card from '../../components/LandingCardsWithNav/Card';
 export default function index() {
   return (
     <Container>
-      <H1>Oasis Multiply</H1>
+      <H1>About</H1>
       <P>
-        Multiply your exposure to your favorite crypto assets. Browse our
-        featured products or select a asset.
+        About Relay
       </P>
       <CardContainer>
         {CardsOne.map((e: any, index: number) => {
@@ -22,6 +21,7 @@ export default function index() {
               ButtonText={e.ButtonText}
               CardListItems={e.CardListItems}
               MiddleContainerColor={e.MiddleContainerColor}
+              ButtonUrl={''}
             />
           );
         })}

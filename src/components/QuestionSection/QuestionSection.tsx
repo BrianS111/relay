@@ -5,34 +5,41 @@ export default function QuestionSection() {
   const ListItems = [
     {
       TitleText: 'Learn',
-      ParagraphText: 'Deep dive into oasis.app functionalities and glossary',
+      ParagraphText: 'Dig into the relay.cc product suite',
       ListItemsText: [
         {
           itemTitle: 'Get Started',
+          ItemUrl: 'https://relay.cc/about',
         },
         {
-          itemTitle: 'Tutorials',
+          itemTitle: 'Integrations',
+          itemUrl: 'https://docs.relay.cc/relay/relay-receiver',
         },
         {
           itemTitle: 'Key Concepts',
+          itemUrl: 'https://docs.relay.cc/relay/',
         },
       ],
     },
     {
       TitleText: 'Support',
-      ParagraphText: 'Contact Oasis.app team whenever you need',
+      ParagraphText: 'The relay.cc team is here to help',
       ListItemsText: [
         {
-          itemTitle: 'FAQ',
+          itemTitle: 'About + FAQ',
+          itemUrl: 'https://relay.cc/about',
         },
         {
           itemTitle: 'Discord',
+          itemUrl: 'https://discord.com/invite/ybRyHA8h',
         },
         {
           itemTitle: 'Contact us',
+          itemUrl: 'relay.cc/seanwbren.eth',
         },
         {
           itemTitle: 'Twitter',
+          itemUrl: 'https://twitter.com/relay_eth',
         },
       ],
     },
@@ -67,6 +74,12 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   max-width: 1200px;
+
+  @media (max-width: 897px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -80,7 +93,7 @@ const CardContainer = styled.div`
 
 const Header = styled.h2`
   margin-bottom: 25px;
-  font-size: 32px;
+  font-size: 48px;
   color: ${(props) => props.theme.colors.black};
   font-weight: 500;
   text-align: center;

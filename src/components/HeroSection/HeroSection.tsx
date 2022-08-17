@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import blackArrowRight from '../../images/blackArrowRight.png';
 import whiteArrowRight from '../../images/whiteArrowWhite.png';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function HeroSection() {
@@ -11,55 +12,32 @@ export default function HeroSection() {
   }, []);
   return (
     <Container>
-      <TopHeroButton>
-        <InnerLeftCircle>D 5%</InnerLeftCircle>
-        <InnerText>Refer a Feiend. Earn DAI today</InnerText>
-        <InnerIconContainer>
-          <Image
-            height={15}
-            width={15}
-            alt="Click to follow link"
-            src={blackArrowRight}
-          />
-        </InnerIconContainer>
-      </TopHeroButton>
-      <H1>Deploy your crypto into DeFi</H1>
+      <H1>Message Everywhere Using Your Web3 Identity</H1>
       <HeroSubText>
-        Earn a yield, Multiple your Exposure or Borrow against your crypto. ETH,
-        BTC and 30 more cryptos available to put to work.
+        Your Web3 wallet is now even more powerful. Use it for any and all types
+        of messaging —encrypted and decentralized!
       </HeroSubText>
-      <CallToActionButton>
-        <CtaButtonText>Connect a Wallet </CtaButtonText>
-        <ImageContainer>
-          <Image
-            src={whiteArrowRight}
-            width={15}
-            height={16}
-            alt="Click to Connect a wallet"
-          />
-        </ImageContainer>
-      </CallToActionButton>
+      <Link href={'https://relay.cc'} passHref>
+        <CtaLink target="_blank">
+          <CallToActionButton>
+            <CtaButtonText>Launch App</CtaButtonText>
+            <ImageContainer>
+              <Image
+                src={whiteArrowRight}
+                width={15}
+                height={16}
+                alt="Launch Relay App"
+              />
+            </ImageContainer>
+          </CallToActionButton>
+        </CtaLink>
+      </Link>
       <HeroUl>
-        <HeroLi>ETH</HeroLi>
-        <HeroLi>BTC</HeroLi>
-        <HeroLi>DAI</HeroLi>
-        <HeroLi>UNI LP</HeroLi>
-        <HeroLi>YFI</HeroLi>
+        <HeroLi>Relay</HeroLi>
+        <HeroLi>Receiver</HeroLi>
+        <HeroLi>Bridge</HeroLi>
+        <HeroLi>Pro</HeroLi>
       </HeroUl>
-      <ThreeDivContainer>
-        <Div>
-          <H3>30 day volume</H3>
-          <Span>$4.63B</Span>
-        </Div>
-        <Div>
-          <H3>Managed on Oasis</H3>
-          <Span>$3.42B</Span>
-        </Div>
-        <Div>
-          <H3>Median Vault</H3>
-          <Span>$98.52k</Span>
-        </Div>
-      </ThreeDivContainer>
     </Container>
   );
 }
@@ -69,7 +47,8 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
+  min-height: 70vh;
 `;
 
 const InnerIconContainer = styled.div`
@@ -129,13 +108,18 @@ const InnerText = styled.span`
 
 const H1 = styled.h1`
   color: ${(props) => props.theme.colors.black};
-  font-size: 52px;
+  font-size: 64px;
   font-weight: 500;
-  line-height: 52px;
   margin-bottom: 16px;
   text-align: center;
   padding: 20px;
+  line-height: 1.25;
+  max-width: 900px;
   animation: pageload 500ms ease-in-out;
+
+  @media (max-width: 950px) {
+    font-size: 52px;
+  }
 `;
 
 const HeroSubText = styled.p`
@@ -186,9 +170,9 @@ const HeroUl = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 75px;
   flex-wrap: wrap;
   animation: pageload2 300ms ease-in-out forwards;
+  margin-bottom: 100px;
 `;
 
 const HeroLi = styled.li`
@@ -248,4 +232,8 @@ const H3 = styled.h3`
 const Span = styled.span`
   color: ${(props) => props.theme.colors.black};
   font-size: 40px;
+`;
+
+const CtaLink = styled.a`
+  text-decoration: none;
 `;

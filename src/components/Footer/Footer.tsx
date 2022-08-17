@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Image from 'next/image';
-import blackArrowRight from '../../images/blackArrowRight.png';
 import SocialContainer from './SocialContainer';
+import Link from 'next/link';
 
 export default function FooterSubscribeSection() {
   return (
@@ -11,49 +10,64 @@ export default function FooterSubscribeSection() {
         <List>
           <ListTitle>About</ListTitle>
           <Ul>
-            <Li>Terms</Li>
-            <Li>Careers</Li>
-            <Li>Privacy</Li>
-            <Li>Cookie Policy</Li>
+            <Link href="https://realy.cc/team" passHref>
+              <A target="_blank">
+                <Li>Careers</Li>
+              </A>
+            </Link>
+            <Link href="https://realy.cc/team" passHref>
+              <A target="_blank">
+                <Li>Privacy</Li>
+              </A>
+            </Link>
           </Ul>
         </List>
         <List>
           <ListTitle>Resources</ListTitle>
           <Ul>
-            <Li>Oracles</Li>
-            <Li>Blog</Li>
-            <Li>Knowledge Center</Li>
-            <Li>Oracles</Li>
+            <Link href="https://mirror.xyz/relaycc.eth" passHref>
+              <A target="_blank">
+                <Li>Mirror</Li>
+              </A>
+            </Link>
+            <Link href=" https://docs.relay.cc" passHref>
+              <A target="_blank">
+                <Li>Docs</Li>
+              </A>
+            </Link>
+            <Link href="https://xmtp.com/" passHref>
+              <A target="_blank">
+                <Li>XMTP</Li>
+              </A>
+            </Link>
           </Ul>
         </List>
         <List>
           <ListTitle>Products</ListTitle>
           <Ul>
-            <Li>Multiply</Li>
-            <Li>Careers</Li>
-            <Li>Privacy</Li>
-            <Li>Cookie Policy</Li>
+            <Link href="https://docs.relay.cc/relay/relay-home" passHref>
+              <A target="_blank">
+                <Li>Relay</Li>
+              </A>
+            </Link>
+            <Link href="https://docs.relay.cc/relay/relay-receiver" passHref>
+              <A target="_blank">
+                <Li>Receiver</Li>
+              </A>
+            </Link>
+            <Link href="https://docs.relay.cc/relay/relay-bridge" passHref>
+              <A target="_blank">
+                <Li>Bridge</Li>
+              </A>
+            </Link>
+            <Link href="https://docs.relay.cc/relay/relay-broadcast" passHref>
+              <A target="_blank">
+                <Li>Pro</Li>
+              </A>
+            </Link>
           </Ul>
         </List>
       </ListContainer>
-      <ContactContainer>
-        <H3>Stay up to date with Oasis.app</H3>
-        <Span>Subscribe to the newsletter for Oasis updates</Span>
-        <InputContainer>
-          <Input placeholder={'Email Address'} />
-          <RightContainer>
-            <Button>Subscribe</Button>
-            <IconContainer>
-              <Image
-                width={12}
-                height={9}
-                alt="Submit Email"
-                src={blackArrowRight}
-              />
-            </IconContainer>
-          </RightContainer>
-        </InputContainer>
-      </ContactContainer>
     </Container>
   );
 }
@@ -105,6 +119,7 @@ const InputContainer = styled.div`
   width: 378px;
   padding: 8px 24px;
   justify-content: space-between;
+  background-color: white;
   &:hover {
     ${IconContainer} {
       transform: translateX(5px);
@@ -141,7 +156,6 @@ const Ul = styled.ul`
   color: ${(props) => props.theme.colors.black};
   font-size: 18px;
   font-weight: 600;
-  max-width: 100px;
 `;
 
 const Li = styled.li`
@@ -181,3 +195,7 @@ const ListTitle = styled.h3`
   color: ${(props) => props.theme.colors.black};
   text-align: center;
 `;
+
+const A = styled.a`
+  text-decoration: none;
+`
