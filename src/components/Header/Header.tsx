@@ -150,7 +150,7 @@ export default function Header() {
           <Link href={'https://relay.cc'} passHref>
             <A target='_blank'>
               <RightButton>
-                Launch Apppp
+                Launch App
                 <ConnectArrowContainer>
                   <Image
                     width={14}
