@@ -1,6 +1,6 @@
 # Overview
 
-An XMTP protocol client from daopanel.
+An XMTP protocol client from Relay.
 
 # Tech Stack
 
