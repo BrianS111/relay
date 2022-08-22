@@ -10,6 +10,7 @@ import MobileBetaStatus from 'components/MobileBetaStatus';
 import { useRedirect } from 'hooks';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Link from 'next/link';
 import PanelLogo from '../../public/assets/images/PanelLogo.png';
 
 export default function Landing() {
@@ -60,13 +61,21 @@ export default function Landing() {
     <Page>
       <Header>
         <TopLeftFlexRow>
-          <Image height={27} width={29} src={PanelLogo.src} alt="logo"></Image>
-          <TopLeftTitle>Relay</TopLeftTitle>
+          <Link href={'https://try.relay.cc/'} passHref>
+            <A target="_blank">
+              <Image
+                height={27}
+                width={29}
+                src={PanelLogo.src}
+                alt="logo"></Image>
+              <TopLeftTitle>Relay</TopLeftTitle>
+            </A>
+          </Link>
         </TopLeftFlexRow>
         <TopRightTextContent>Public Beta</TopRightTextContent>
       </Header>
       <MaxContentWidth>
-        <ModalHeader>Connect a wallet</ModalHeader>
+        <ModalHeader>Connect a wallet to chat</ModalHeader>
         <ModalParagraph>
           Wallets are used to send, receive, store, and display digital assets
           like Ethereum and NFTs.
@@ -99,6 +108,11 @@ export default function Landing() {
             />
           </MaybeHideOnMobileConnector>
         </ConnectorList>
+        <Link href={'https://try.relay.cc'} passHref>
+          <A target="_blank">
+            <ModalBottomSpanText>Learn more about relay</ModalBottomSpanText>
+          </A>
+        </Link>
       </MaxContentWidth>
       <BottomRight>
         <MobileBetaStatus />
@@ -117,7 +131,8 @@ const ModalHeader = styled.h1`
 const ModalParagraph = styled.p`
   font-size: 0.75rem;
   font-weight: 500;
-  margin-bottom: 48px;
+  line-height: 1.5;
+  margin-bottom: 28px;
   text-align: center;
   color: #5b5b5b;
 `;
@@ -127,6 +142,7 @@ const TopLeftTitle = styled.div`
   margin-left: 10px;
   display: flex;
   align-items: center;
+  color: black; ;
 `;
 
 const TopRightTextContent = styled.div`
@@ -230,4 +246,15 @@ const Header = styled.header`
   @media (max-width: 400px) {
     padding: 1.1825rem 1.5rem;
   }
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+`;
+
+const ModalBottomSpanText = styled.span`
+  margin-top: 28px;
+  color: ${(props) => props.theme.colors.brandPrimary};
 `;

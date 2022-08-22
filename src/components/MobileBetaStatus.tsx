@@ -11,7 +11,7 @@ export default function MobileBetaStatus() {
   return (
     <Wrapper>
       <Space>
-        <Link href="https://relay.cc" passHref>
+        <Link href="https://try.relay.cc" passHref>
           <a target="_blank" rel="noreferrer">
             <Image
               src={WhiteLogo.src}
