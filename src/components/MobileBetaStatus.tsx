@@ -51,7 +51,7 @@ export default function MobileBetaStatus() {
       </Space>
       <Space>
         <Discord
-          href="https://discord.gg/ybRyHA8h"
+          href="https://discord.gg/DTMKf63ZSf"
           target="_blank"
           rel="noreferrer">
           <Image
