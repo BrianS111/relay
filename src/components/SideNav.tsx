@@ -13,7 +13,7 @@ const SidePanel = ({ isHorizontal = false }: SidePanelProps) => {
   const { disconnect } = useDisconnect();
 
   const goToGithub = useCallback(() => {
-    router.push('https://github.com/daopanel');
+    router.push('https://github.com/relay.cc');
   }, [router]);
 
   const changeTheme = useCallback(() => {

@@ -123,7 +123,7 @@ export default function Conversations() {
           <Centered>
             <MobileStatusCard
               title="No conversations found."
-              subtitle="Send your first message to any ENS name or Eth address. Note: They will first have to sign their own XMTP message, so tell them to get on daopanel.chat! Or message us at trydaopanel.eth to try it out."
+              subtitle="Send your first message to any ENS name or Eth address. Note: They will first have to sign their own XMTP message, so tell them to get on relay.cc! Or message us at relay.cc/seanwbren.eth to try it out."
               buttonText="Create a Conversation"
               isLoading={false}
               isError={false}
