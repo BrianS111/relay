@@ -10,7 +10,7 @@ import MobileBetaStatus from 'components/MobileBetaStatus';
 import { useRedirect } from 'hooks';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import PanelLogo from '../../public/assets/images/PanelLogo.png';
+import PanelLogo from '../../public/assets/images/RelayLogoWhiteBg.png';
 
 export default function Landing() {
   const router = useRouter();

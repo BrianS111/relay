@@ -18,6 +18,7 @@ import { useEffect } from 'react';
 import PlausibleProvider from 'next-plausible';
 import { isRelayProd, Plausible } from 'config';
 const alchemyKey = 'kmMb00nhQ0SWModX6lJLjXy_pVtiQnjx';
+import ProfileNftSection from '../components/profiles/ProfileNftSection'
 
 const chains = defaultChains;
 const defaultChain = chain.mainnet;
@@ -108,7 +109,8 @@ export default function App({ Component, pageProps }: AppProps) {
               <RedirectProvider>
                 <>
                   <GlobalStyles />
-                  <Component {...pageProps} />
+                  <ProfileNftSection />
+                  {/* <Component {...pageProps} /> */}
                 </>
               </RedirectProvider>
             </XmtpContextProvider>
