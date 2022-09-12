@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
+
+
 export default function Web3Identity() {
+
+  
   return (
     <Container>
       <SectionTitle>web3 Identity</SectionTitle>
@@ -55,7 +60,6 @@ const TopSection = styled.div`
 `
 
 const Container = styled.div`
-  padding: 16px;
 `;
 
 const Web3Info = styled.div`

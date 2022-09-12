@@ -1,13 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import Avatar from '../Avatar'
 
-export default function UserProfile() {
+
+interface UserProfileProps {
+  peerAddress: string;
+  peerEnsName?: string;
+}
+
+export default function UserProfile({peerAddress, peerEnsName}: UserProfileProps) {
   return (
     <Container>
-      <EnsAvatar></EnsAvatar>
+      <EnsAvatar>
+        <Avatar address={peerAddress} size='full' />
+      </EnsAvatar>
       <EnsInfo>
-        <EnsName>seanwbren.eth</EnsName>
-        <WalletAddress>12323...12312</WalletAddress>
+        <EnsName>{peerEnsName ? peerEnsName : "" }</EnsName>
+        <WalletAddress>{peerAddress}</WalletAddress>
       </EnsInfo>
     </Container>
   );
@@ -15,9 +24,8 @@ export default function UserProfile() {
 const EnsAvatar = styled.div`
   height: 160px;
   width: 160px;
-  background: #f2faff;
-  border-radius: 12px;
-  border: 1px solid #dbdbdb;
+  background: #c3e3f7;
+  border-radius: 50%;
 `;
 
 const Container = styled.div`
@@ -25,7 +33,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
-  border: 1px solid black;
 `;
 
 const EnsName = styled.h1`

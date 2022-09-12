@@ -17,6 +17,7 @@ import {
 import MobileStatusCard from './MobileStatusCard';
 import { useRouterEnsData } from 'hooks';
 import MobileLoadingEnsName from './MobileLoadingEnsName';
+import ProfileContainer from './profiles/ProfileContainer';
 
 export default function Messages() {
   const { isMobile } = useDeviceDetect();
@@ -36,6 +37,10 @@ export default function Messages() {
   const scrollToRef = useRef<HTMLUListElement>(null);
   const responsiveId = useResponsiveUserId(peerEnsName, peerAddress, 'N/A');
   const [peerIsAvailable, setPeerIsAvailable] = useState<boolean | undefined>();
+  const [showProfile, setShowProfile] = useState(true);
+  useEffect(() => {
+    setShowProfile(false);
+  }, []);
 
   const openMenu = useCallback(() => setShowMenu(true), [setShowMenu]);
   const closeMenu = useCallback(() => setShowMenu(false), [setShowMenu]);
@@ -135,6 +140,10 @@ export default function Messages() {
       </Page>
     );
 
+  const handleProfileToggle = () => {
+    setShowProfile(!showProfile);
+  };
+
   return (
     <Page>
       <MobileMenu onClickClose={closeMenu} showMenu={showMenu} />
@@ -142,6 +151,8 @@ export default function Messages() {
         onClickBack={goToConversations}
         onMenuClick={openMenu}
         titleText={responsiveId}
+        handleProfileToggle={handleProfileToggle}
+        showProfile={showProfile}
       />
       {peerIsAvailable === false && (
         <Centered>
@@ -203,25 +214,35 @@ export default function Messages() {
       {xmtp.status === Status.loading && (
         <MobileLoadingMessages isMobile={isMobile} />
       )}
-      {xmtp.status === Status.ready && (
-        <List ref={scrollToRef} isMobile={isMobile}>
-          {buckets.map((bucketMessages, index) => {
-            if (bucketMessages.length > 0) {
-              return (
-                <MobileMessagesBucket
-                  key={index}
-                  messages={bucketMessages}
-                  clientAddress={xmtp.client.address}
-                  startDate={bucketMessages[0].sent}
-                  sentByAddress={bucketMessages[0].senderAddress}
-                />
-              );
-            }
-            return null;
-          })}
-        </List>
-      )}
 
+      {xmtp.status === Status.ready && (
+        <>
+          {showProfile && (
+            <ProfileContainer
+              peerEnsName={peerEnsName}
+              peerAddress={peerAddress}
+            />
+          )}
+          {showProfile || (
+            <List ref={scrollToRef} isMobile={isMobile}>
+              {buckets.map((bucketMessages, index) => {
+                if (bucketMessages.length > 0) {
+                  return (
+                    <MobileMessagesBucket
+                      key={index}
+                      messages={bucketMessages}
+                      clientAddress={xmtp.client.address}
+                      startDate={bucketMessages[0].sent}
+                      sentByAddress={bucketMessages[0].senderAddress}
+                    />
+                  );
+                }
+                return null;
+              })}
+            </List>
+          )}
+        </>
+      )}
       {(xmtp.status === Status.loading ||
         xmtp.status === Status.ready ||
         Object.keys(messages).length === 0) && (

@@ -8,7 +8,7 @@ const MobileFixedHeader = styled.header`
   align-items: center;
   padding-left: 30px;
   padding-right: 40px;
-  height: 96px;
+  min-height: 96px;
   border-bottom: 2px solid #191027;
   background-color: white;
 `;

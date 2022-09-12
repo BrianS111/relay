@@ -30,7 +30,7 @@ export default function Conversation(props: ConversationProps) {
     <Container onClick={goToConversation} isRequest={false}>
       <div>
         <div>
-          <Avatar address={props.peerAddress} />
+          <Avatar size='small' address={props.peerAddress} />
         </div>
         <div>
           {isLoading && <MobileLoadingText />}

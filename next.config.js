@@ -6,7 +6,12 @@ const nextConfig = {
   images: {
     // TODO Not sure how we want to handle this. We can't add every possible
     // domain here for, say, ENS avatars.
-    domains: ['ipfs.io', 'prod-metadata.s3.amazonaws.com', 'gateway.ipfs.io'],
+    domains: [
+      'ipfs.io',
+      'prod-metadata.s3.amazonaws.com',
+      'gateway.ipfs.io',
+      'metadata.ens.domains',
+    ],
   },
   reactStrictMode: true,
   compiler: {

@@ -2,29 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import RelayLogo from '../../../public/assets/images/RelayLogoWhiteBg.png';
+import MobileFixedHeader from 'components/MobileFixedHeader';
+import Link from 'next/link';
 
 export default function ProfileHeader() {
   return (
-    <Header>
-      <GoHomeContainer>
-        <Image height={27} width={29} alt="Home" src={RelayLogo} />
-        <RelayName>Relay</RelayName>
-      </GoHomeContainer>
+    <MobileFixedHeader>
+      <Link href="/" passHref>
+        <GoHomeContainer>
+          <Image height={27} width={29} alt="Home" src={RelayLogo} />
+          <RelayName>Relay</RelayName>
+        </GoHomeContainer>
+      </Link>
       <EnsContainer>
         <Logo></Logo>
         <Name>seanwbren.eth</Name>
       </EnsContainer>
-    </Header>
+    </MobileFixedHeader>
   );
 }
 
-const Header = styled.header`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 32px 93px;
-`;
 const RelayName = styled.h2`
   font-weight: 600;
 `;
@@ -34,6 +31,7 @@ const GoHomeContainer = styled.div`
   align-items: center;
   gap: 10px;
   height: 30px;
+  cursor: pointer;
 `;
 
 const EnsContainer = styled.div`

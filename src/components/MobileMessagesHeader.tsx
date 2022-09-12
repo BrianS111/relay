@@ -7,14 +7,20 @@ interface MobileMessageHeaderProps {
   titleText: string;
   onMenuClick: () => unknown;
   onClickBack: () => unknown;
+  handleProfileToggle?: () => unknown;
+  showProfile?: boolean
 }
 
 export default function MobileMessagesHeader({
   titleText,
   onMenuClick,
   onClickBack,
+  handleProfileToggle,
+  showProfile
+
 }: MobileMessageHeaderProps) {
   const [isCopied, doCopy] = useCopyClipboard();
+
   return (
     <MobileFixedHeader>
       <Menu
@@ -23,10 +29,19 @@ export default function MobileMessagesHeader({
         src={'/assets/images/MobileDarkHamburgerMenu.svg'}
         onClick={onMenuClick}
       />
-      {isCopied || (
-        <UserDisplay onClick={() => doCopy(titleText)}>{titleText}</UserDisplay>
-      )}
-      {isCopied && <Copied>Copied!</Copied>}
+      <UserInfo>
+        <UserDisplay>
+          <NameAndSvg>
+            <Name>{titleText}</Name>
+          </NameAndSvg>
+          <LinkContainer>
+              <LinkItem onClick={handleProfileToggle}>{showProfile? 'Back to conversation' : 'Profile'} </LinkItem>
+            <LinkItem onClick={() => doCopy(titleText)}>
+              {isCopied ? 'Copied!' : 'Copy Address'}
+            </LinkItem>
+          </LinkContainer>
+        </UserDisplay>
+      </UserInfo>
       <GoBack
         width={20}
         height={20}
@@ -37,12 +52,40 @@ export default function MobileMessagesHeader({
   );
 }
 
+const LinkContainer = styled.ul`
+  position: absolute;
+  align-items: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  font-size: 14px;
+  padding: 0px 10px;
+  bottom: -20px;
+`;
+
+const LinkItem = styled.li`
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 16px;
+  background-color: transparent;
+  transform: scale(1);
+  transition: background-color 300ms, scale 300ms;
+
+  :hover {
+    transform: scale(1.1);
+    background-color: rgb(90, 70, 198, 0.2);
+  }
+`;
+
+const UserInfo = styled.div``;
+
 const UserDisplay = styled.h1`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   letter-spacing: -0.01em;
   color: #ffffff;
@@ -51,17 +94,10 @@ const UserDisplay = styled.h1`
   order: 0;
   flex-grow: 0;
   margin: 0px 16px;
+  position: relative;
   cursor: pointer;
-
-  :hover {
-    margin-bottom: 4px;
-  }
-`;
-
-const Copied = styled(UserDisplay)`
-  font-weight: 500;
-  font-size: 14px;
-  margin-bottom: 4px;
+  padding: 5px 10px;
+  min-width: 300px;
 `;
 
 const GoBack = styled(Image)`
@@ -70,4 +106,13 @@ const GoBack = styled(Image)`
 
 const Menu = styled(Image)`
   cursor: pointer;
+`;
+
+const NameAndSvg = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Name = styled.h2`
+  font-size: 24px;
+  padding: 10px;
 `;
